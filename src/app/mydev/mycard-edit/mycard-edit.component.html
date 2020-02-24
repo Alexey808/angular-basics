@@ -1,0 +1,48 @@
+<div class="edit-block">
+  <input type="text" #myInput (keyup.enter)="onInput($event)" (blur)="onBlur(myInput.value)"/>
+</div>
+
+<br><br>
+
+<!--<div (click)="bool = !bool"-->
+<!--     [ngStyle]="{-->
+<!--        width: '200px',-->
+<!--        height: '200px',-->
+<!--        margin: '10px',-->
+<!--        backgroundColor: bool ? '#ccc' : '#333'-->
+<!--}"></div>-->
+
+<!--<div class="test-block"-->
+<!--     (click)="bool = !bool"-->
+<!--     [ngClass]="{-->
+<!--        color1: !bool,-->
+<!--        color2: bool-->
+<!--}"></div>-->
+
+<!--<div class="test-block"-->
+<!--     (click)="bool = !bool"-->
+<!--     [class.color1]="!bool"-->
+<!--     [class.color2]="bool"-->
+<!--&gt;</div>-->
+
+<!--<div *ngIf="!bool; else myElse">ngIf</div>-->
+<!--<ng-template #myElse>-->
+<!--  <div>myElse</div>-->
+<!--</ng-template>-->
+
+<!--<div [ngSwitch]="bool" (click)="bool = !bool">-->
+<!--  <p *ngSwitchCase="true">ngSwitchCase-1</p>-->
+<!--  <p *ngSwitchCase="false">ngSwitchCase-2</p>-->
+<!--  <p *ngSwitchDefault>ngSwitchDefault-0</p>-->
+<!--</div>-->
+
+<!--<div *ngFor="let n of arr; let inx = index">-->
+<!--  <li>{{inx + 1}}: {{n}}</li>-->
+<!--</div>-->
+
+
+
+<br><br>
+
+
+

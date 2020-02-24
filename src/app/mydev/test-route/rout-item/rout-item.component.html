@@ -1,0 +1,19 @@
+<h2>rout-item</h2>
+<div>
+  <p *ngIf="showId">{{item.id}}</p>
+  <p>{{item.title}}</p>
+</div>
+
+<button (click)="goBack()">back</button>
+
+<!--
+Ниже две кноп идентичны по функционалу
+page2/1?showId=true#fragment
+-->
+<button [routerLink]="['/page2', item.id]"
+        [queryParams]="{showId: true}"
+        fragment="fragment"
+>queryParams and fragment</button>
+
+<button (click)="testRoute()">queryParams and fragment</button>
+

@@ -1,0 +1,15 @@
+<h2>Page1</h2>
+<p>test-route-page1 works!</p>
+<ul>
+  <li><a routerLinkActive="nav-active"
+         [routerLinkActiveOptions]="{exact: true}"
+         routerLink="/"
+  >home</a></li>
+  <li><a routerLinkActive="nav-active"
+         [routerLink]="['/page1']"
+  >page1</a></li>
+  <li><a routerLinkActive="nav-active"
+         [routerLink]="['/page2']"
+  >page2</a></li>
+</ul>
+

@@ -1,0 +1,51 @@
+.validation {
+  color: red;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-card {
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  padding: 10px;
+  background-color: #fffff1;
+  margin-bottom: 10px;
+}
+
+.form-block {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+.container {
+  display: inline-block;
+  margin: 10px;
+  border: 1px dashed #ccc;
+  padding: 10px;
+  border-radius: 3px;
+}
+
+h2 {
+  margin: 10px 0 10px;
+  color: #333333;
+}
+
+input {
+  border-radius: 3px;
+  padding: 5px;
+  border: 1px solid #ccc;
+
+  &.ng-invalid.ng-touched {
+    border: 1px solid red;
+  }
+  &.ng-valid.ng-touched {
+    border: 1px solid green;
+  }
+}
+select {
+  border-radius: 3px;
+  padding: 5px;
+  border: 1px solid #ccc;
+  background-color: #ffffff;
+}

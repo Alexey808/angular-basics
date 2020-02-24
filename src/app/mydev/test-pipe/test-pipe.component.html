@@ -1,0 +1,16 @@
+<div>
+  <p>{{num}}</p> <!-- 2.718281828459045  -->
+  <p>{{num | number}}</p> <!-- 002.71828 -->
+  <p>{{num | number: '3.1-5'}}</p> <!-- 002.71828 -->
+  <p>{{str | uppercase }}</p> <!-- TEST -->
+  <p>{{str | lowercase | titlecase }}</p> <!-- Test -->
+  <p>{{str | titlecase | slice:1:3}}</p> <!-- es -->
+  <p>{{date | date:'shortDate'}}</p> <!-- 2/20/20 -->
+  <p>{{float | percent}}</p> <!-- 42% -->
+  <p>{{float | percent: '3.1-2'}}</p> <!-- 042.0% -->
+  <pre>{{obj | json}}</pre>
+
+  <div *ngFor="let item of object | keyvalue">
+    {{item.key}}:{{item.value}} <!-- 1:bar 2:foo -->
+  </div>
+</div>

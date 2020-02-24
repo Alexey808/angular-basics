@@ -1,0 +1,30 @@
+
+<div class="wrapper">
+  <div class="input-block">
+    <input type [(ngModel)]="todoTitle"/><button (click)="addTodo()">Добавить</button>
+    <button (click)="fetchTodos()">Загрузить</button>
+  </div>
+
+  <div *ngIf="!loading; else loadingBlock">
+    <ng-container *ngIf="todos.length; else noTodos">
+      <div *ngFor="let todo of todos" class="card">
+        <div class="inline-fragment">
+          <span class="title" [class.completed]="todo.completed">{{todo.title}}</span>
+          <button class="button-delete" (click)="removeTodo(todo)">&times;</button>
+        </div>
+        <div>
+          <button [disabled]="todo.completed" (click)="completeTodo(todo)">Завершить</button>
+        </div>
+      </div>
+    </ng-container>
+    <ng-template #noTodos>
+      <p>Нет элементов</p>
+    </ng-template>
+  </div>
+
+  <ng-template #loadingBlock>
+    <p>Загрузка...</p>
+  </ng-template>
+
+</div>
+

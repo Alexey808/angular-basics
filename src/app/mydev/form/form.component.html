@@ -1,0 +1,59 @@
+<div class="container">
+  <form [formGroup]="form" (ngSubmit)="submit()">
+
+    <div class="form-card">
+      <h2>Auth validate example</h2>
+      <div class="form-block">
+        <label>Email</label>
+        <input type="text" placeholder="Email" formControlName="email">
+        <div class="validation" *ngIf="form.get('email').invalid && form.get('email').touched">
+          <small *ngIf="form.get('email').errors.required">Поле email не может быть пустым</small>
+          <small *ngIf="form.get('email').errors.email">Введите корректный email</small>
+          <small *ngIf="form.get('email').errors.restrictedEmail">Введённый email запрещён</small>
+          <small *ngIf="form.get('email').errors.asyncUniqEmail">Введённый email занят</small>
+
+        </div>
+        <!-- <pre>{{form.get('email').errors | json}}</pre>-->
+      </div>
+
+      <div class="form-block">
+        <label>Password</label>
+        <input type="password" placeholder="Password" formControlName="password">
+        <div class="validation" *ngIf="form.get('password').invalid && form.get('password').touched">
+          <small *ngIf="form.get('password').errors.required">Пароль не может быть пустым</small>
+          <small *ngIf="form.get('password').errors.minlength">
+            Длина пароля должна быть не меньше
+            {{form.get('password').errors.minlength.requiredLength}}
+          </small>
+        </div>
+        <!-- <pre>{{form.get('password').errors | json}}</pre>-->
+      </div>
+    </div>
+
+    <div class="form-card" formGroupName="select">
+      <h2>Example pick, changes another form of control</h2>
+      <div class="form-block">
+        <label>Selected: {{form.get('select').value.selected}}</label>
+        <select formControlName="item" (change)="onSelected()">
+          <option value="none">None</option>
+          <option value="one">One</option>
+          <option value="two">Two</option>
+          <option value="three">Three</option>
+        </select>
+      </div>
+      <!-- <pre>{{form.get('select').value | json}}</pre>-->
+    </div>
+
+    <div class="form-card" formGroupName="additions">
+      <h2>Example with additional element</h2>
+      <button type="button" (click)="onAddField()">Add field</button>
+      <div class="form-block" *ngFor="let control of getAdditionsControls(); let idx = index">
+        <label>№ {{idx + 1}}</label>
+        <input type="text" [formControlName]="idx">
+      </div>
+    </div>
+
+    <button type="submit" [disabled]="form.invalid || form.pending">Submit</button>
+
+  </form>
+</div>

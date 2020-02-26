@@ -22,6 +22,7 @@ import { TestErrorPageComponent } from './mydev/test-route/test-error-page/test-
 // import { TestGuardComponent } from './mydev/test-route/test-guard/test-guard.component';
 import {FormModule} from './mydev/form/form.module';
 import {HttpClientTestModule} from './mydev/http-client/http-client-test.module';
+import {DynamicComponentsModule} from './mydev/dynamic-components/dynamic-components.module';
 
 @NgModule({
   declarations: [
@@ -51,6 +52,7 @@ import {HttpClientTestModule} from './mydev/http-client/http-client-test.module'
     FormsModule,
     FormModule,
     HttpClientTestModule,
+    DynamicComponentsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

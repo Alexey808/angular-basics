@@ -6,7 +6,6 @@ import {TestRoutePage2Component} from './mydev/test-route/test-route-page2/test-
 import {RoutItemComponent} from './mydev/test-route/rout-item/rout-item.component';
 import {TestRoutePage2ChildComponent} from './mydev/test-route/test-route-page2/test-route-page2-child/test-route-page2-child.component';
 import {TestErrorPageComponent} from './mydev/test-route/test-error-page/test-error-page.component';
-import {TestLazyLoadingComponent} from './mydev/test-route/lazy-loading/test-lazy-loading/test-lazy-loading.component';
 
 
 const routes: Routes = [

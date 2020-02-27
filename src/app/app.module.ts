@@ -24,6 +24,7 @@ import {FormModule} from './mydev/form/form.module';
 import {HttpClientTestModule} from './mydev/http-client/http-client-test.module';
 import {DynamicComponentsModule} from './mydev/dynamic-components/dynamic-components.module';
 import {TestResolverModule} from './mydev/resolvers/test-resolver.module';
+import { UnitTestComponent } from './mydev/testing/unit-test/unit-test.component';
 
 
 @NgModule({
@@ -43,6 +44,7 @@ import {TestResolverModule} from './mydev/resolvers/test-resolver.module';
     RoutItemComponent,
     TestRoutePage2ChildComponent,
     TestErrorPageComponent,
+    UnitTestComponent,
     // TestGuardComponent,
   ],
   imports: [

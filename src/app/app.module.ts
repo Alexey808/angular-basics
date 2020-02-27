@@ -23,6 +23,8 @@ import { TestErrorPageComponent } from './mydev/test-route/test-error-page/test-
 import {FormModule} from './mydev/form/form.module';
 import {HttpClientTestModule} from './mydev/http-client/http-client-test.module';
 import {DynamicComponentsModule} from './mydev/dynamic-components/dynamic-components.module';
+import {TestResolverModule} from './mydev/resolvers/test-resolver.module';
+
 
 @NgModule({
   declarations: [
@@ -52,7 +54,8 @@ import {DynamicComponentsModule} from './mydev/dynamic-components/dynamic-compon
     FormsModule,
     FormModule,
     HttpClientTestModule,
-    DynamicComponentsModule
+    DynamicComponentsModule,
+    TestResolverModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -6,6 +6,8 @@ import {TestRoutePage2Component} from './mydev/test-route/test-route-page2/test-
 import {RoutItemComponent} from './mydev/test-route/rout-item/rout-item.component';
 import {TestRoutePage2ChildComponent} from './mydev/test-route/test-route-page2/test-route-page2-child/test-route-page2-child.component';
 import {TestErrorPageComponent} from './mydev/test-route/test-error-page/test-error-page.component';
+import {TestResolverComponent} from './mydev/resolvers/test-resolver/test-resolver.component';
+import {TestResolver} from './mydev/resolvers/test-resolver.resolver';
 
 
 const routes: Routes = [
@@ -20,6 +22,13 @@ const routes: Routes = [
     path: 'test-lazy-loading',
     loadChildren: () => import('./mydev/test-route/lazy-loading/test-lazy-loading/test-lazy-loading.module')
       .then(m => m.TestLazyLoadingModule)
+  },
+  {
+    path: 'test-resolver/:id',
+    component: TestResolverComponent,
+    resolve: {
+      item: TestResolver
+    }
   },
   {path: '**', redirectTo: '/error'}
 ];

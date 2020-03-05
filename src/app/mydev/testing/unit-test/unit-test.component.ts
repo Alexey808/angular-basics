@@ -10,6 +10,7 @@ export class UnitTestComponent implements OnInit {
   counter = 0;
   public form: FormGroup;
   items;
+  message = '';
 
   constructor(
     private fb: FormBuilder,
@@ -36,5 +37,12 @@ export class UnitTestComponent implements OnInit {
 
   decrement() {
     this.counter--;
+  }
+
+  add(title: string) {
+    const item = { title };
+    this.service.create(item).subscribe(itemElement => {
+      this.items.push(itemElement);
+    }, err => this.message = err);
   }
 }

@@ -1,11 +1,15 @@
 import { UnitTestComponent } from './unit-test.component';
 import {FormBuilder} from '@angular/forms';
+import {TestBed} from '@angular/core/testing';
+import {UnitTestService} from './unit-test.service';
+import {of, throwError} from 'rxjs';
 
 describe('UnitTestComponent', () => {
   let component: UnitTestComponent;
-
+  let service: UnitTestService;
   beforeEach(() => { // вызывается перед каждый тестом it-ом
-    component = new UnitTestComponent(new FormBuilder());
+    service = TestBed.inject(UnitTestService);
+    component = new UnitTestComponent(new FormBuilder(), service);
   });
   beforeAll(() => {}); // вызывается перед всеми "it"
   afterEach(() => {}); // вызывается после завершения каждого "it"
@@ -40,5 +44,26 @@ describe('UnitTestComponent', () => {
     const control = component.form.get('login');
     control.setValue('');
     expect(control.valid).toBeFalsy();
+  });
+
+  /* Тестирование добавление сущности, если всё успешно */
+  it('should add new item', () => {
+    const item = {title: 'test'};
+    const spy = spyOn(service, 'create').and.returnValue(of(item));
+
+    component.add(item.title);
+
+    expect(spy).toHaveBeenCalled();
+    expect(component.items.includes(item)).toBeTruthy();
+  });
+
+  /* Тестирование добавление сущности, если не успешно */
+  it('not should add new item', () => {
+    const error = 'Error message';
+    spyOn(service, 'create').and.returnValue(throwError(error));
+
+    component.add('Item title');
+
+    expect(component.message).toBe(error);
   });
 });

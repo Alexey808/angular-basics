@@ -1,4 +1,4 @@
-import { UnitTestComponent } from './unit-test.component';
+import {UnitTestComponent} from './unit-test.component';
 import {FormBuilder} from '@angular/forms';
 import {TestBed} from '@angular/core/testing';
 import {UnitTestService} from './unit-test.service';
@@ -67,3 +67,93 @@ describe('UnitTestComponent', () => {
     expect(component.message).toBe(error);
   });
 });
+
+  /*
+  * Дополнительные примеры тестов
+  * */
+describe('UnitTestComponent', () => {
+  it('сравнение с использованием ===', () => {
+    expect(1 + 2).toBe(3);
+  });
+
+  it('сравнение переменных и объектов (включая содержимое)', () => {
+    const a = {x: 8, y: 9};
+    const b = {x: 8, y: 9};
+    expect(a).toEqual(b);
+    expect(a).not.toBe(b); // a не является b
+  });
+
+  it('значение должно быть определено', () => {
+    expect(window.document).toBeDefined();
+  });
+
+  it('значение должно быть null', () => {
+    const a = null;
+    expect(a).toBeNull();
+  });
+
+  it('значение должно быть верно', () => {
+    expect(5 > 0).toBeTruthy();
+  });
+
+  it('значение должно быть не верно', () => {
+    expect(5 < 0).toBeFalsy();
+  });
+
+  it('значение должно быть меньше чем', () => {
+    expect(1 + 2).toBeLessThan(5);
+  });
+
+  it('значение должно быть больше чем', () => {
+    expect(1 + 2).toBeGreaterThan(0);
+  });
+
+  it('значение должно быть близко к числу', () => {
+    expect(1.2345).toBeCloseTo(1.2, 1);
+  });
+
+  it('значение должно соответствовать регулярному выражению', () => {
+    expect('some string').toMatch(/string/);
+  });
+
+  it('значение должно содержать', () => {
+    expect([1, 2, 3]).toContain(2);
+    expect('some string').toContain('some');
+  });
+
+  it('должно быть вызвано исключение', () => {
+    const myFunc = () => '';
+    // component.myFunc();
+    expect(myFunc).toThrow();
+  });
+
+});
+
+
+/* Тестирование асинхронных функций */
+describe('shirt async suite', () => {
+  // переопределение дефолтного 5 секундного тайма для всех тестов
+  const originDefaultTimeout = jasmine.DEFAULT_TIMEOUT_INTERVAL;
+  beforeAll(() => {
+    jasmine.DEFAULT_TIMEOUT_INTERVAL = 2000;
+  });
+  afterAll(() => {
+    jasmine.DEFAULT_TIMEOUT_INTERVAL = originDefaultTimeout;
+  });
+
+
+  it('should complete after 2 seconds timeout', (done) => {
+    setTimeout(() => {
+      done();
+    }, 1000);
+  });
+
+  it('should fail with reason after timeout', (done) => {
+    setTimeout(() => {
+      done.fail('Всё сломалось!');
+    }, 100);
+  });
+});
+
+
+

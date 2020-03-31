@@ -130,7 +130,7 @@ describe('UnitTestComponent', () => {
 });
 
 
-/* Тестирование асинхронных функций */
+/* Тестирование асинхронных функций (1 способ)*/
 describe('shirt async suite', () => {
   // переопределение дефолтного 5 секундного тайма для всех тестов
   const originDefaultTimeout = jasmine.DEFAULT_TIMEOUT_INTERVAL;
@@ -152,6 +152,19 @@ describe('shirt async suite', () => {
     setTimeout(() => {
       done.fail('Всё сломалось!');
     }, 100);
+  });
+});
+
+/* Тестирование асинхронных функций (2 способ)*/
+describe ('Асинхронно', () => {
+  let a = 0;
+
+  const async = () => setTimeout(( () => a = 5), 1000);
+
+  it ('асинхронное выполнение кода', () => {
+    runs(() => async());
+    waitsFor((() => a === 5), 'значение должно быть изменено', 3000);
+
   });
 });
 

@@ -25,6 +25,10 @@ import {HttpClientTestModule} from './mydev/http-client/http-client-test.module'
 import {DynamicComponentsModule} from './mydev/dynamic-components/dynamic-components.module';
 import {TestResolverModule} from './mydev/resolvers/test-resolver.module';
 import { UnitTestComponent } from './mydev/testing/unit-test/unit-test.component';
+import {TestRxjsModule} from './mydev/test-rxjs/test-rxjs.module';
+import { TestStylesComponent } from './mydev/test-styles/test-styles.component';
+import {TestForChildModule} from './mydev/test-route/test-for-child/test-for-child.module';
+import { CurrencyPipe } from './test/pipes/currency.pipe';
 
 
 @NgModule({
@@ -45,6 +49,8 @@ import { UnitTestComponent } from './mydev/testing/unit-test/unit-test.component
     TestRoutePage2ChildComponent,
     TestErrorPageComponent,
     UnitTestComponent,
+    TestStylesComponent,
+    CurrencyPipe,
     // TestGuardComponent,
   ],
   imports: [
@@ -58,6 +64,8 @@ import { UnitTestComponent } from './mydev/testing/unit-test/unit-test.component
     HttpClientTestModule,
     DynamicComponentsModule,
     TestResolverModule,
+    TestRxjsModule,
+    TestForChildModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

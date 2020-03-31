@@ -1,0 +1,16 @@
+<h1>filter works</h1>
+<button (click)="setFilter('te')">Set filter = te</button>
+
+<ul>
+  <h2>List1</h2>
+  <li *ngFor="let item of collection$ | async">
+    <pre>{{item | json}}</pre>
+  </li>
+</ul>
+
+<ul>
+  <h2>List2</h2>
+  <li *ngFor="let item of collection | async">
+    <pre>{{item | json}}</pre>
+  </li>
+</ul>

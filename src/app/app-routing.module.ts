@@ -8,6 +8,7 @@ import {TestRoutePage2ChildComponent} from './mydev/test-route/test-route-page2/
 import {TestErrorPageComponent} from './mydev/test-route/test-error-page/test-error-page.component';
 import {TestResolverComponent} from './mydev/resolvers/test-resolver/test-resolver.component';
 import {TestResolver} from './mydev/resolvers/test-resolver.resolver';
+import {TestForChildComponent} from './mydev/test-route/test-for-child/test-for-child.component';
 
 
 const routes: Routes = [
@@ -30,6 +31,7 @@ const routes: Routes = [
       item: TestResolver
     }
   },
+  {path: 'test-for-child', component: TestForChildComponent},
   {path: '**', redirectTo: '/error'}
 ];
 

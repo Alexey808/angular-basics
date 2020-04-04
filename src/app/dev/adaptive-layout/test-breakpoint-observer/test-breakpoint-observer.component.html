@@ -1,0 +1,29 @@
+<h1>test-breakpoint-observer works!</h1>
+
+<div fxLayout="column">
+  <div fxLayout="row">1</div>
+  <div fxLayout="row">2</div>
+  <div fxLayout="row">3</div>
+</div>
+
+<br><br>
+
+
+<div fxLayout="column" class="container">
+  <div [ngStyle.xs]="{outline: '1px solid red'}">599(600) | xs</div>
+  <div [ngStyle.sm]="{outline: '1px solid green'}">959(960) | sm</div>
+  <div [ngStyle.md]="{outline: '1px solid blue'}">1279(1280) | md</div>
+  <div [ngStyle.lg]="{outline: '1px solid orange'}">1919(1920) | lg</div>
+  <div [ngStyle.xl]="{outline: '1px solid black'}">1920+ | xl</div>
+  <br><br>
+  <div [ngStyle.gt-xs]="{outline: '1px solid red'}">599(600) | gt-xs</div>
+  <div [ngStyle.gt-sm]="{outline: '1px solid green'}">959(960) | gt-sm</div>
+  <div [ngStyle.gt-md]="{outline: '1px solid blue'}">1279(1280) | gt-md</div>
+  <div [ngStyle.gt-lg]="{outline: '1px solid orange'}">1919(1920) | gt-lg</div>
+  <div [ngStyle.lt-xl]="{outline: '1px solid black'}">1920+ | lt-xl</div>
+  <br><br>
+  <div [ngStyle.lt-sm]="{outline: '1px solid green'}">959(960) | lt-sm</div>
+  <div [ngStyle.lt-md]="{outline: '1px solid blue'}">1279(1280) | lt-md</div>
+  <div [ngStyle.lt-lg]="{outline: '1px solid orange'}">1919(1920) | lt-lg</div>
+  <div [ngStyle.lt-xl]="{outline: '1px solid black'}">1920+ | lt-xl</div>
+</div>

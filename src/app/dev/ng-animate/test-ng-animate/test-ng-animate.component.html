@@ -1,0 +1,7 @@
+<h1>test-ng-animate works!</h1>
+<button (click)="onClick()">bool: {{this.bool}}</button>
+<br><br>
+
+<ng-container *ngIf="bool">
+  <div class="block" @mybounce></div>
+</ng-container>

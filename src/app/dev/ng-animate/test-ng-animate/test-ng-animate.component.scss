@@ -1,0 +1,11 @@
+.block {
+  margin-left:15px;
+  width: 300px;
+  height: 150px;
+  background-color: #cccccc;
+}
+
+.active {
+  background-color: #333333;
+  transform: scale(1.1);
+}

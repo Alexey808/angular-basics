@@ -30,9 +30,11 @@ import {TestRxjsModule} from './mydev/test-rxjs/test-rxjs.module';
 import {TestStylesComponent} from './mydev/test-styles/test-styles.component';
 import {TestForChildModule} from './mydev/test-route/test-for-child/test-for-child.module';
 
+import {FlexLayoutModule} from '@angular/flex-layout';
 import {AppPipesModule} from './dev/pipes/app-pipes.module';
 import {AppAdaptiveLayoutModule} from './dev/adaptive-layout/app-adaptive-layout.module';
-import {FlexLayoutModule} from '@angular/flex-layout';
+import {AppNgAnimateModule} from './dev/ng-animate/app-ng-animate.module';
+
 
 
 
@@ -70,9 +72,10 @@ import {FlexLayoutModule} from '@angular/flex-layout';
     TestResolverModule,
     TestRxjsModule,
     TestForChildModule,
+    FlexLayoutModule,
     AppPipesModule,
     AppAdaptiveLayoutModule,
-    FlexLayoutModule,
+    AppNgAnimateModule,
   ],
   // providers: [
   //   { provide: LOCALE_ID, useValue: 'ru-RU' }

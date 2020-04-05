@@ -7,6 +7,9 @@ import {BreakpointObserver, Breakpoints} from '@angular/cdk/layout';
   styleUrls: ['./test-breakpoint-observer.component.scss']
 })
 export class TestBreakpointObserverComponent implements OnInit {
+  bool = false;
+  i = 0;
+
   constructor(breakpointObserver: BreakpointObserver) {
     breakpointObserver.observe([
       Breakpoints.HandsetLandscape,
@@ -31,5 +34,13 @@ export class TestBreakpointObserverComponent implements OnInit {
 
   private activateHandsetLayout(breakPoints) {
     console.log(breakPoints);
+  }
+
+  onClick() {
+    this.bool = !this.bool;
+  }
+
+  test() {
+    console.log(this.i++);
   }
 }

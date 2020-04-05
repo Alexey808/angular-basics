@@ -8,6 +8,16 @@
 
 <br><br>
 
+<!--<button (click)="onClick()">bool: {{bool}}</button>-->
+<!--<div fxShow [fxShow.xs]="test()" >test</div>-->
+
+<br><br>
+
+<div fxHide.xs>скрывается если ширина меньше 600px | DESKTOP</div>
+<div fxHide.gt-xs [fxShow.xs]="test()">скрывается если ширина больше 600px | MOBILE</div>
+
+<br><br>
+
 
 <div fxLayout="column" class="container">
   <div [ngStyle.xs]="{outline: '1px solid red'}">599(600) | xs</div>

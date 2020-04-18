@@ -1,0 +1,25 @@
+<h1>click-animate works!</h1>
+<p>
+  Надо сделать анимацию по клику на элемент и только он должен проанимироваться,
+  анимироваться должен каждый клик.
+</p>
+
+<div fxLayout="row">
+  <div *ngFor="let item of items" class="block" [@openClose]="state" (click)="click()">
+    {{item.name}}
+  </div>
+</div>
+
+<div fxLayout="row">
+  <div *ngFor="let item of items" class="block" (@openClose.start)="test($event)">
+    {{item.name}}
+  </div>
+</div>
+
+
+
+
+
+
+
+

@@ -1,0 +1,111 @@
+<h1>doc-tutorial works!</h1>
+
+<div fxLayout>
+  <button (click)="disabledAllAnimation()">Отключить всю анмимацию: {{isAllAnimationDisabled}}</button>
+</div>
+<br>
+
+<div fxLayout="row wrap" @isAllAnimationDisabled>
+
+  <!-- Анимация с использованием *ngIf -->
+  <div class="container" fxLayout="column">
+    <h3>Анимация с использованием *ngIf</h3>
+    <div class="tool" fxLayout>
+      <button (click)="runNgIfAnimation()">ngIfBool: {{ngIfBool}}</button>
+    </div>
+    <div fxLayout *ngIf="!ngIfBool" @ngIfTrigger>
+      <div class="withContext">Тест анимации</div>
+    </div>
+  </div>
+
+  <!-- Анимация c переключением состояний -->
+  <div class="container" fxLayout="column">
+    <h3>Анимация c переключением состояний</h3>
+    <div class="tool" fxLayout>
+      <div>colorState:&nbsp;</div>
+      <button (click)="runSetColorState('red')">red</button>
+      <button (click)="runSetColorState('blue')">blue</button>
+      <button (click)="runSetColorState('green')">green</button>
+    </div>
+    <div fxLayout>
+      <div class="withContext" fxFlex [@colorState]="colorState">{{colorState}}</div>
+    </div>
+  </div>
+
+  <!-- Анимация добавления и удаления элементов из списка *ngFor -->
+  <div class="container" fxLayout="column">
+    <h3>Анимация добавления и удаления элементов из списка *ngFor</h3>
+    <div class="tool" fxLayout>
+      <button (click)="addToArray()">Добавить</button>
+    </div>
+    <div fxLayout class="blocks" [@ngForTrigger]="array.length">
+      <div *ngFor="let num of array"
+           class="withContext"
+           (click)="removeToArray(num)">
+        {{num}}
+      </div>
+    </div>
+  </div>
+
+  <!-- Булевая анимация -->
+  <div class="container" fxLayout="column">
+    <h3>Булевая анимация</h3>
+    <div class="tool" fxLayout>
+      <button (click)="toggleBoolAnimation()">boolAnimation: {{boolAnimation}}</button>
+    </div>
+    <div fxLayout fxFlex>
+      <div class="empty-block" [@booleanTrigger]="boolAnimation"></div>
+    </div>
+  </div>
+
+  <div class="container" fxLayout="column">
+    <h3>Булевая анимация</h3>
+    <div class="tool" fxLayout>
+      <button (click)="toggleBoolAnimation()">boolAnimation: {{boolAnimation}}</button>
+    </div>
+    <div fxLayout fxFlex>
+      <div class="empty-block" [@booleanTrigger]="boolAnimation"></div>
+    </div>
+  </div>
+
+  <!-- Бесконечная анимация и блокирование анимации -->
+  <div class="container" fxLayout="column">
+    <h3>Бесконечная анимация и блокирование анимации</h3>
+    <div class="tool" fxLayout>
+      <button (click)="stopChildAnimation()">Остановить анимацию {{isDisabledChildAnimation}}</button>
+      <button (click)="toggleBoolAnimation()">boolAnimation: {{boolAnimation}}</button>
+    </div>
+<!--    <div fxLayout fxFlex [@.disabled]="isDisabledChildAnimation">-->
+<!--      <div class="empty-block" [@booleanTrigger]="boolAnimation"></div>-->
+<!--    </div>-->
+    <div fxLayout fxFlex>
+      <div class="empty-block" [@booleanTrigger]="boolAnimation"></div>
+    </div>
+  </div>
+
+  <!-- Булевая анимация -->
+<!--  <div class="container" fxLayout="column">-->
+<!--    <h3>Булевая анимация</h3>-->
+<!--    <div class="tool" fxLayout>-->
+<!--      <button (click)="startLoadSimulation()">isLoaded: {{isLoaded}}</button>-->
+<!--    </div>-->
+<!--    <div fxLayout fxFlex>-->
+<!--      <div class="empty-block"-->
+<!--           [@loadTrigger]="isLoaded  ? 'done' : 'start'"-->
+<!--           (@loadTrigger.start)="onLoadAnimationEvent($event)"-->
+<!--           (@loadTrigger.done)="onLoadAnimationEvent($event)">-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+
+</div>
+
+
+<!--<div class="block"-->
+<!--     @baseAnimation-->
+<!--     (click)="toggleBaseAnimation()">1</div>-->
+<!--<br><br>-->
+<!--<div class="block"-->
+<!--     [@baseAnimation]="bool ? 'open' : 'close'"-->
+<!--     (click)="toggleBaseAnimation()"-->
+<!--&gt;{{bool}}</div>-->

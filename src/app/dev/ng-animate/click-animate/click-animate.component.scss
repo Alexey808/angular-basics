@@ -1,0 +1,12 @@
+.block {
+  background-color: #eee;
+  margin: 3px;
+  padding: 5px 7px;
+  border-radius: 3px;
+  font-size: 24px;
+  cursor: pointer;
+  &:hover {
+    background-color: #d8d8d8;
+    box-shadow: 0 0 5px #ccc;
+  }
+}

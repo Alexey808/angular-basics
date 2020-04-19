@@ -1,7 +1,23 @@
-<h1>test-ng-animate works!</h1>
-<button (click)="onClick()">bool: {{this.bool}}</button>
-<br><br>
+<div fxLayout="column">
+  <h1>test-ng-animate works!</h1>
+<!--  <div>-->
+<!--    <button (click)="onClick()">bool: {{this.bool}}</button>-->
+<!--  </div>-->
 
-<ng-container *ngIf="bool">
-  <div class="block" @mybounce></div>
-</ng-container>
+
+  <!--<ng-container *ngIf="bool">-->
+  <!--  <div class="block" @mybounce></div>-->
+  <!--</ng-container>-->
+<!--  <br><br>-->
+
+  <div fxLayout fxFlex class="container">
+    <div *ngFor="let item of items"
+         fxLayout="row wrap"
+         class="item"
+         [@pulseTrigger]="item.checked"
+         (click)="changeChecked(item)">
+      {{item.num}}
+    </div>
+  </div>
+</div>
+

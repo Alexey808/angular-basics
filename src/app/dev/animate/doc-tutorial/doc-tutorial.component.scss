@@ -41,6 +41,11 @@
   }
 }
 
+.active {
+  background-color: gray !important;
+}
+
+
 /* базовые расширямые классы */
 
 .base-block {
@@ -59,6 +64,3 @@
   border-radius: 5px;
 }
 
-.active {
-  background-color: gray !important;
-}

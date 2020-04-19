@@ -16,6 +16,12 @@
 
   & .withContext {
     @extend .base-block;
+
+    transition: all .2s ease-in-out;
+    border: 1px solid transparent;
+    &:active {
+      transform: scale(1.1);
+    }
   }
 
   & .blocks {
@@ -52,3 +58,7 @@
   border-radius: 5px;
 }
 
+.active {
+  border: 1px dashed green !important;
+
+}

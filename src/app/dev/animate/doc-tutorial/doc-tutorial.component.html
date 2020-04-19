@@ -47,17 +47,19 @@
     </div>
   </div>
 
-  <!-- Булевая анимация -->
+  <!-- Анимация активного элемента в *ngFor -->
   <div class="container" fxLayout="column">
-    <h3>Булевая анимация</h3>
-    <div class="tool" fxLayout>
-      <button (click)="toggleBoolAnimation()">boolAnimation: {{boolAnimation}}</button>
-    </div>
-    <div fxLayout fxFlex>
-      <div class="empty-block" [@booleanTrigger]="boolAnimation"></div>
+    <h3>Анимация активного элемента в *ngFor</h3>
+    <div class="tool" fxLayout></div>
+    <div fxLayout class="blocks" @ngForActiveTrigger>
+      <div *ngFor="let item of arrayItems"
+           class="withContext" [class.active]="item.checked" (click)="changeActiveItem(item)">
+        {{item.num}}
+      </div>
     </div>
   </div>
 
+  <!-- Булевая анимация -->
   <div class="container" fxLayout="column">
     <h3>Булевая анимация</h3>
     <div class="tool" fxLayout>
@@ -75,28 +77,39 @@
       <button (click)="stopChildAnimation()">Остановить анимацию {{isDisabledChildAnimation}}</button>
       <button (click)="toggleBoolAnimation()">boolAnimation: {{boolAnimation}}</button>
     </div>
-<!--    <div fxLayout fxFlex [@.disabled]="isDisabledChildAnimation">-->
-<!--      <div class="empty-block" [@booleanTrigger]="boolAnimation"></div>-->
-<!--    </div>-->
-    <div fxLayout fxFlex>
-      <div class="empty-block" [@booleanTrigger]="boolAnimation"></div>
+    <div fxLayout fxFlex [@.disabled]="isDisabledChildAnimation">
+      <div class="empty-block" [@booleanTrigger]="boolAnimation"><div [style.height.px]="20"></div></div>
     </div>
   </div>
 
-  <!-- Булевая анимация -->
-<!--  <div class="container" fxLayout="column">-->
-<!--    <h3>Булевая анимация</h3>-->
-<!--    <div class="tool" fxLayout>-->
-<!--      <button (click)="startLoadSimulation()">isLoaded: {{isLoaded}}</button>-->
-<!--    </div>-->
-<!--    <div fxLayout fxFlex>-->
-<!--      <div class="empty-block"-->
-<!--           [@loadTrigger]="isLoaded  ? 'done' : 'start'"-->
-<!--           (@loadTrigger.start)="onLoadAnimationEvent($event)"-->
-<!--           (@loadTrigger.done)="onLoadAnimationEvent($event)">-->
-<!--      </div>-->
-<!--    </div>-->
-<!--  </div>-->
+  <!-- Методы триггеров -->
+  <div class="container" fxLayout="column">
+    <h3>Методы триггеров</h3>
+    <div class="tool" fxLayout>
+      <button (click)="startLoadSimulation()">isLoaded: {{isLoaded}}</button>
+      <button (click)="isLoaded = false">reset</button>
+    </div>
+    <div fxLayout fxFlex>
+      <div class="empty-block"
+           [@loadTrigger]="isLoaded  ? 'done' : 'start'"
+           (@loadTrigger.start)="onLoadAnimationEvent($event)"
+           (@loadTrigger.done)="onLoadAnimationEvent($event)">
+      </div>
+    </div>
+  </div>
+
+  <!-- Анимация с использованием keyframes -->
+  <div class="container" fxLayout="column">
+    <h3>Анимация с использованием keyframes</h3>
+    <div class="tool" fxLayout>
+      <button (click)="onRunTestKeyframes()">keyframes: {{keyframes}}</button>
+    </div>
+    <div fxLayout>
+      <div class="withContext" [@keyFramesTrigger]="keyframes">Тест анимации</div>
+    </div>
+  </div>
+
+
 
 </div>
 

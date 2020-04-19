@@ -4,7 +4,7 @@ import {
   state,
   style,
   animate,
-  transition, stagger, query,
+  transition, stagger, query, keyframes,
 } from '@angular/animations';
 
 const baseAnimation = [
@@ -93,12 +93,41 @@ const loaderAnimation = [
   state('done', style({
     backgroundColor: 'green'
   })),
-  // transition('* => start', [
-  //   animate('3s')
-  // ]),
-  // transition('* => done', [
-  //   animate('.5s')
-  // ]),
+  transition('* => start', [
+    animate('5s')
+  ]),
+  transition('* => done', [
+    animate('.5s')
+  ]),
+];
+
+const keyFramesAnimation = [
+  transition('* => active', [
+    animate('2s', keyframes([
+      style({ backgroundColor: 'blue', offset: 0}),
+      style({ backgroundColor: 'red', offset: 0.8}),
+      style({ backgroundColor: 'orange', offset: 1.0})
+    ])),
+  ]),
+  transition('* => inactive', [
+    animate('2s', keyframes([
+      style({ backgroundColor: 'orange', offset: 0}),
+      style({ backgroundColor: 'red', offset: 0.2}),
+      style({ backgroundColor: 'blue', offset: 1.0})
+    ]))
+  ]),
+];
+
+const ngForActiveAnimation = [
+  transition('* => *', [
+    query('.active', [
+      style({ backgroundColor: 'green', opacity: 0, transform: 'translateY(-100px)'}),
+      stagger(-30, [
+        animate('500ms cubic-bezier(0.35, 0, 0.25, 1)',
+          style({ backgroundColor: 'blue', opacity: 1, transform: 'none' }))
+      ])
+    ], {optional: true})
+  ])
 ];
 
 @Component({
@@ -112,6 +141,8 @@ const loaderAnimation = [
     trigger('booleanTrigger', boolAnimation),
     trigger('loadTrigger', loaderAnimation),
     trigger('isAllAnimationDisabled', []),
+    trigger('keyFramesTrigger', keyFramesAnimation),
+    trigger('ngForActiveTrigger', ngForActiveAnimation),
   ]
 })
 export class DocTutorialComponent implements OnInit {
@@ -121,6 +152,8 @@ export class DocTutorialComponent implements OnInit {
   boolAnimation = false;
   isDisabledChildAnimation = false;
   isLoaded = false;
+  keyframes = 'inactive';
+  arrayItems = [{num: 1, checked: false}, {num: 2, checked: true}, {num: 3, checked: false}];
 
   @HostBinding('@.disabled') public isAllAnimationDisabled = false;
 
@@ -160,20 +193,26 @@ export class DocTutorialComponent implements OnInit {
     this.isAllAnimationDisabled = !this.isAllAnimationDisabled;
   }
 
-  onLoadAnimationEvent( event: AnimationEvent ) {
-    console.log('!!!!', event);
-    // openClose is trigger name in this example
-    // phaseName is start or done
-    // in our example, totalTime is 1000 or 1 second
-    // in our example, fromState is either open or closed
-    // in our example, toState either open or closed
-    // the HTML element itself, the button in this case
+  onLoadAnimationEvent( event: AnimationEvent ) { // почемуто тип не верен хоть и по докам
+    console.log(event);
   }
 
   startLoadSimulation() {
-    this.isLoaded = false;
     setTimeout(() => {
       this.isLoaded = true;
     }, 3000);
+  }
+
+  onRunTestKeyframes() {
+    this.keyframes = this.keyframes === 'active' ? 'inactive' : 'active';
+  }
+
+  changeActiveItem(item) {
+    const newItem = this.arrayItems.map((x) => {
+      x.checked = x.num === item.num;
+      return x;
+    });
+
+    this.arrayItems = newItem;
   }
 }

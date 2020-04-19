@@ -51,9 +51,12 @@
   <div class="container" fxLayout="column">
     <h3>Анимация активного элемента в *ngFor</h3>
     <div class="tool" fxLayout></div>
-    <div fxLayout class="blocks" @ngForActiveTrigger>
+    <div fxLayout class="blocks">
       <div *ngFor="let item of arrayItems"
-           class="withContext" [class.active]="item.checked" (click)="changeActiveItem(item)">
+           class="withContext"
+           [class.active]="item.checked"
+           [@ngForActiveTr]="item.checked"
+           (click)="changeActiveItem(item)">
         {{item.num}}
       </div>
     </div>

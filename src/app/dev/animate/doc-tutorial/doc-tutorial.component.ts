@@ -7,23 +7,6 @@ import {
   transition, stagger, query, keyframes,
 } from '@angular/animations';
 
-const baseAnimation = [
-  state('open', style({
-    height: '100px',
-    opacity: 1,
-    backgroundColor: '#eee'
-  })),
-  state('close', style({
-    opacity: 1,
-    backgroundColor: '#e8e8e8'
-  })),
-  transition('open => close', [
-    animate('1s')
-  ]),
-  transition('close => open', [
-    animate('0.5s')
-  ]),
-];
 
 const ngIfAnimation = [
   // void => * || :enter || * => *
@@ -130,6 +113,23 @@ const ngForActiveAnimation = [
   ])
 ];
 
+const ngForActiveTr = [
+  transition('* => true', [
+    animate('1s', keyframes([
+      style({ backgroundColor: 'orange', offset: 0, transform: 'scale(1)' }),
+      style({ backgroundColor: 'red', offset: 0.8, transform: 'scale(1.1)'}),
+      style({ backgroundColor: 'orange', offset: 1.0, transform: 'scale(1)'})
+    ])),
+  ]),
+  // transition('* => false', [
+  //   animate('2s', keyframes([
+  //     style({ backgroundColor: 'orange', offset: 0}),
+  //     style({ backgroundColor: 'red', offset: 0.2}),
+  //     style({ backgroundColor: 'blue', offset: 1.0})
+  //   ]))
+  // ]),
+];
+
 @Component({
   selector: 'app-doc-tutorial',
   templateUrl: './doc-tutorial.component.html',
@@ -143,6 +143,7 @@ const ngForActiveAnimation = [
     trigger('isAllAnimationDisabled', []),
     trigger('keyFramesTrigger', keyFramesAnimation),
     trigger('ngForActiveTrigger', ngForActiveAnimation),
+    trigger('ngForActiveTr', ngForActiveTr),
   ]
 })
 export class DocTutorialComponent implements OnInit {

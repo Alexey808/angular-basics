@@ -1,3 +1,47 @@
+
+## Структура
+```
+pipes/
+
+components/
+
+directives/
+  test-directive/
+
+routes/
+  guards/
+  test-route/
+
+services/
+  test-services
+  interseptors/
+  rest/
+  resolvers/
+
+dev/
+  ng-tempalte/
+  animate/
+  ng-content/
+  rxjs/
+  es/
+  events/
+  dynamic/
+  child/
+  http-client/
+
+lib/
+  ng-animate/
+  angular-material/
+  moment/
+  lodash/
+  material-adaptive/
+
+trash/
+  test/
+```
+
+
+
 ## Частичное содержание
 
 **form**

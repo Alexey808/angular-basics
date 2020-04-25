@@ -64,12 +64,14 @@
 
   <!-- Булевая анимация -->
   <div class="container" fxLayout="column">
-    <h3>Булевая анимация</h3>
+    <h3>Булевая анимация!!!!</h3>
     <div class="tool" fxLayout>
       <button (click)="toggleBoolAnimation()">boolAnimation: {{boolAnimation}}</button>
     </div>
     <div fxLayout fxFlex>
-      <div class="empty-block" [@booleanTrigger]="boolAnimation"></div>
+      <div class="empty-block" [@booleanTrigger]="boolAnimation">
+        1
+      </div>
     </div>
   </div>
 

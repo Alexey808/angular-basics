@@ -36,6 +36,7 @@ import { AppPipesModule } from './pipes/app-pipes.module';
 import { AppAdaptiveLayoutModule } from './+dev/adaptive-layout/app-adaptive-layout.module';
 import { AppNgAnimateModule } from './+lib/ng-animate/app-ng-animate.module';
 import { AppAnimateModule } from './+dev/animate/app-animate.module';
+import { AppNgTemplateModule } from './+dev/ng-template/app-ng-template.module';
 
 
 @NgModule({
@@ -78,6 +79,7 @@ import { AppAnimateModule } from './+dev/animate/app-animate.module';
     AppAdaptiveLayoutModule,
     AppNgAnimateModule,
     AppAnimateModule,
+    AppNgTemplateModule,
   ],
   // providers: [
   //   { provide: LOCALE_ID, useValue: 'ru-RU' }

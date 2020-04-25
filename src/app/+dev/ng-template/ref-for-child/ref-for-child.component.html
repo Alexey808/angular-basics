@@ -1,0 +1,20 @@
+<div>By clicked to: {{clickedTo}}</div>
+
+<br>
+
+<app-ref-for-child-additional [refTemplate]="refCard" [data]="data1"></app-ref-for-child-additional>
+<app-ref-for-child-additional [refTemplate]="refCard" [data]="data2"></app-ref-for-child-additional>
+
+<ng-template #refCard let-dataValue="data">
+  <ng-container *ngFor="let item of dataValue"
+                [ngTemplateOutlet]="refRow"
+                [ngTemplateOutletContext]="{
+                  name: item.name,
+                  click: onClickTo
+                }"
+  ></ng-container>
+</ng-template>
+
+<ng-template #refRow let-itemName="name" let-testMethod="click">
+  <div (click)="testMethod(itemName)">{{itemName}}</div>
+</ng-template>

@@ -1,0 +1,17 @@
+.container {
+  border: 1px solid #cccccc;
+  padding: 10px;
+  border-radius: 3px;
+}
+.item {
+  display: flex;
+  align-items: center;
+  height: 40px;
+  outline: 1px dashed #cccccc;
+  margin-bottom: 4px;
+}
+
+.scroll-viewport {
+  height: 100%;
+  width: 100%;
+}

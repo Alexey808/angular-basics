@@ -1,0 +1,14 @@
+<h2>infinity-scroll works!</h2>
+<ul class="container">
+  <cdk-virtual-scroll-viewport itemSize="100" class="scroll-viewport">
+    <li *cdkVirtualFor="let item of dataSource">
+<!--      <pre>!{{item | json}}!</pre>-->
+      <div *ngIf="item; else loading" class="item">
+        {{item.num}}
+      </div>
+      <ng-template #loading>
+        <div>Loading...</div>
+      </ng-template>
+    </li>
+  </cdk-virtual-scroll-viewport>
+</ul>

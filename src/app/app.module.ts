@@ -38,6 +38,7 @@ import { AppNgAnimateModule } from './+lib/ng-animate/app-ng-animate.module';
 import { AppAnimateModule } from './+dev/animate/app-animate.module';
 import { AppNgTemplateModule } from './+dev/ng-template/app-ng-template.module';
 import { AppNgForTrackByFnModule } from './+dev/ng-for-track-by-fn/ng-for-track-by-fn.module';
+import { AppInfinityScrollModule } from './+dev/infinity-scroll/infinity-scroll.module';
 
 
 @NgModule({
@@ -82,6 +83,7 @@ import { AppNgForTrackByFnModule } from './+dev/ng-for-track-by-fn/ng-for-track-
     AppAnimateModule,
     AppNgTemplateModule,
     AppNgForTrackByFnModule,
+    AppInfinityScrollModule,
   ],
   // providers: [
   //   { provide: LOCALE_ID, useValue: 'ru-RU' }

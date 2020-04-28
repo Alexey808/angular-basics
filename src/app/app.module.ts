@@ -37,6 +37,7 @@ import { AppAdaptiveLayoutModule } from './+dev/adaptive-layout/app-adaptive-lay
 import { AppNgAnimateModule } from './+lib/ng-animate/app-ng-animate.module';
 import { AppAnimateModule } from './+dev/animate/app-animate.module';
 import { AppNgTemplateModule } from './+dev/ng-template/app-ng-template.module';
+import { AppNgForTrackByFnModule } from './+dev/ng-for-track-by-fn/ng-for-track-by-fn.module';
 
 
 @NgModule({
@@ -80,6 +81,7 @@ import { AppNgTemplateModule } from './+dev/ng-template/app-ng-template.module';
     AppNgAnimateModule,
     AppAnimateModule,
     AppNgTemplateModule,
+    AppNgForTrackByFnModule,
   ],
   // providers: [
   //   { provide: LOCALE_ID, useValue: 'ru-RU' }

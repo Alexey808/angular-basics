@@ -1,0 +1,9 @@
+<h2>ng-for-track-by-fn works!</h2>
+<button (click)="add()">add element</button>
+<!--<ul>-->
+<!--  <li *ngFor="let item of items; trackBy: trackByFn">{{item.name}}</li>-->
+<!--</ul>-->
+
+<ul>
+  <li *ngFor="let item of items" (click)="remove(item)">{{item.name}}</li>
+</ul>

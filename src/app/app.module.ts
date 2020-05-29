@@ -39,7 +39,7 @@ import { AppAnimateModule } from './+dev/animate/app-animate.module';
 import { AppNgTemplateModule } from './+dev/ng-template/app-ng-template.module';
 import { AppNgForTrackByFnModule } from './+dev/ng-for-track-by-fn/ng-for-track-by-fn.module';
 import { AppInfinityScrollModule } from './+dev/infinity-scroll/infinity-scroll.module';
-import { AppMiniProjectModule } from './+trash/mini-project/mini-project.module';
+import { AppMiniProjectModule } from './+trash/mini-project/components/mini-project.module';
 import { MouseCoordsModule } from './+dev/directives/mouse-coords/mouse-coords.module';
 
 

@@ -9,6 +9,7 @@ import { TestErrorPageComponent } from './+mydev/test-route/test-error-page/test
 import { TestResolverComponent } from './+mydev/resolvers/test-resolver/test-resolver.component';
 import { TestResolver } from './+mydev/resolvers/test-resolver.resolver';
 import { TestForChildComponent } from './+mydev/test-route/test-for-child/test-for-child.component';
+import { HomeForMiniProjectComponent } from './+trash/mini-project/home-mini-project/home-for-mini-project.component';
 
 
 const routes: Routes = [
@@ -32,6 +33,9 @@ const routes: Routes = [
     }
   },
   {path: 'test-for-child', component: TestForChildComponent},
+  {path: 'home-mini-project', component: HomeForMiniProjectComponent},
+  {path: 'mini-project', component: HomeForMiniProjectComponent},
+
   {path: '**', redirectTo: '/error'}
 ];
 

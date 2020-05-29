@@ -13,4 +13,8 @@ export class AppComponent {
   bool = true;
   items = [{title: 'abc'}, {title: 'xyz'}];
   search = '';
+
+  test(e: any) {
+    console.log(e);
+  }
 }

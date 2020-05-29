@@ -40,29 +40,31 @@ import { AppNgTemplateModule } from './+dev/ng-template/app-ng-template.module';
 import { AppNgForTrackByFnModule } from './+dev/ng-for-track-by-fn/ng-for-track-by-fn.module';
 import { AppInfinityScrollModule } from './+dev/infinity-scroll/infinity-scroll.module';
 import { AppMiniProjectModule } from './+trash/mini-project/mini-project.module';
+import { MouseCoordsModule } from './+dev/directives/mouse-coords/mouse-coords.module';
+
 
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    TestContentComponent,
-    ContentComponent,
-    TestDirectiveDirective,
-    MyIfDirective,
-    TestPipeComponent,
-    MypipePipe,
-    PipeFilterPipe,
-    PipeFilterPipe,
-    TestRoutePageComponent,
-    TestRoutePage1Component,
-    TestRoutePage2Component,
-    RoutItemComponent,
-    TestRoutePage2ChildComponent,
-    TestErrorPageComponent,
-    UnitTestComponent,
-    TestStylesComponent,
-    // TestGuardComponent,
-  ],
+    declarations: [
+        AppComponent,
+        TestContentComponent,
+        ContentComponent,
+        TestDirectiveDirective,
+        MyIfDirective,
+        TestPipeComponent,
+        MypipePipe,
+        PipeFilterPipe,
+        PipeFilterPipe,
+        TestRoutePageComponent,
+        TestRoutePage1Component,
+        TestRoutePage2Component,
+        RoutItemComponent,
+        TestRoutePage2ChildComponent,
+        TestErrorPageComponent,
+        UnitTestComponent,
+        TestStylesComponent,
+        // TestGuardComponent,
+    ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
@@ -86,6 +88,7 @@ import { AppMiniProjectModule } from './+trash/mini-project/mini-project.module'
     AppNgForTrackByFnModule,
     AppInfinityScrollModule,
     AppMiniProjectModule,
+    MouseCoordsModule,
   ],
   // providers: [
   //   { provide: LOCALE_ID, useValue: 'ru-RU' }

@@ -22,9 +22,9 @@ const routes: Routes = [
   {path: 'page2/:id', component: RoutItemComponent},
   {path: 'error', component: TestErrorPageComponent},
   {
-    path: 'test-lazy-loading',
-    loadChildren: () => import('./+mydev/test-route/lazy-loading/test-lazy-loading/test-lazy-loading.module')
-      .then(m => m.TestLazyLoadingModule)
+    path: 'mini-project',
+    loadChildren: () => import('./+trash/mini-project/components/mini-project.module')
+      .then(m => m.AppMiniProjectModule)
   },
   {
     path: 'test-resolver/:id',

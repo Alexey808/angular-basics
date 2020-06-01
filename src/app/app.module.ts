@@ -78,7 +78,7 @@ import { MouseCoordsModule } from './+dev/directives/mouse-coords/mouse-coords.m
     DynamicComponentsModule,
     TestResolverModule,
     TestRxjsModule,
-    TestForChildModule,
+    // TestForChildModule,
     FlexLayoutModule,
     AppPipesModule,
     AppAdaptiveLayoutModule,

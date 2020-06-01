@@ -20,12 +20,12 @@ export class HomeMiniProjectComponent implements OnInit, OnDestroy {
   ) { }
 
   ngOnInit(): void {
-    console.log('HomeMiniProjectComponent');
+    console.log('--- HomeMiniProjectComponent');
 
-    // this.apiService.getItems().subscribe((x: IItem[]) => {
-    //   console.log('subs', x);
-    //   this.items = x;
-    // });
+    this.apiService.getItems().subscribe((x: IItem[]) => {
+      console.log('subs', x);
+      this.items = x;
+    });
 
     this.service.getItems().pipe(
       tap(x => console.log('pipe component', x)),

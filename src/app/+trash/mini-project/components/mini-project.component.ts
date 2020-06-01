@@ -10,7 +10,7 @@ export class MiniProjectComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
-    console.log('MiniProjectComponent');
+    console.log('--- MiniProjectComponent');
   }
 
 

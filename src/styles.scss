@@ -1,7 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
+@import "src/app/styles/fonts";
+@import "src/app/styles/mixins";
+
 html, body {
   height: 100%;
   margin: 0;
+  @include font-base;
+
+  button {
+    @include font-base;
+  }
 }
 
 .nav-active {

@@ -1,0 +1,12 @@
+@import "colors";
+
+//@mixin font-wght($value) {
+  //font-variation-settings: "wght" $value;
+  //font-family: $value;
+//}
+
+@mixin font-base() {
+  font-family: Manrope, sans-serif;
+  letter-spacing: 0.5px;
+  color: $text-color;
+}

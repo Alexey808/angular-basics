@@ -1,16 +1,19 @@
 <h1>home-mini-project</h1>
 
+<a routerLink="/mini-project">mini-project</a>
+<br>
+<br>
+
 <div>
-  <div *ngFor="let item of items">
+  <div *ngFor="let item of items$ | async">
     {{item.name}}
   </div>
 </div>
 
 <br>
-
 <button (click)="testClick()">testClick</button>
 
-<br><br>
 
-<a routerLink="/mini-project">mini-project</a>
+
+
 

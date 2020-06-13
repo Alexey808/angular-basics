@@ -6,12 +6,17 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
   styleUrls: ['./mini-project.component.scss']
 })
 export class MiniProjectComponent implements OnInit, OnDestroy {
-  ngOnDestroy(): void {
+  isHome = false;
+
+  ngOnInit(): void {}
+
+  ngOnDestroy(): void {}
+
+  onActivate(event: any) {
+    this.isHome = true;
   }
 
-  ngOnInit(): void {
-    console.log('--- MiniProjectComponent');
+  onDeactivate(event: any) {
+    this.isHome = false;
   }
-
-
 }

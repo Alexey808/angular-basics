@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { TestRoutePageComponent } from './+mydev/test-route/test-route-page/test-route-page.component';
 import { TestRoutePage1Component } from './+mydev/test-route/test-route-page1/test-route-page1.component';
 import { TestRoutePage2Component } from './+mydev/test-route/test-route-page2/test-route-page2.component';
@@ -17,14 +17,14 @@ const routes: Routes = [
   {path: '', component: TestRoutePageComponent},
   {path: 'page1', component: TestRoutePage1Component},
   {path: 'page2', component: TestRoutePage2Component, children: [
-      {path: 'page2-child', component: TestRoutePage2ChildComponent}
-    ]},
+    {path: 'page2-child', component: TestRoutePage2ChildComponent}
+  ]},
   {path: 'page2/:id', component: RoutItemComponent},
   {path: 'error', component: TestErrorPageComponent},
   {
     path: 'mini-project',
     loadChildren: () => import('./+trash/mini-project/components/mini-project.module')
-      .then(m => m.AppMiniProjectModule)
+      .then(m => m.AppMiniProjectModule),
   },
   {
     path: 'test-resolver/:id',
@@ -35,15 +35,16 @@ const routes: Routes = [
   },
   {path: 'test-for-child', component: TestForChildComponent},
 
-  {path: 'mini-project', component: AppMiniProjectModule},
-  {path: 'home-mini-project', component: AppHomeMiniProjectModule},
-
-
-  {path: '**', redirectTo: '/error'}
+  // todo остаётся проблема forRoot не знает о модульном дочернем роуте mini-project/home
+  // {path: '**', redirectTo: '/error'}
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  // imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, {
+    preloadingStrategy: PreloadAllModules // стратегия загрузки, предварительная загрузка модулей
+  })],
+
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

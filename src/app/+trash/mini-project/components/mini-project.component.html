@@ -1,4 +1,18 @@
-<h1>mini-project</h1>
-<br>
-<a routerLink="/mini-project/home-mini-project">home mini project</a>
+<div class="body-container">
 
+  <ng-container *ngIf="!isHome">
+    <h1>mini-project</h1>
+    <br>
+    <div fxLayout="row" fxLayoutGap="3px">
+      <a routerLink="/mini-project/home">home</a>
+      <div>/</div>
+      <a routerLink="/">root</a>
+    </div>
+
+  </ng-container>
+
+  <router-outlet
+    (activate)="onActivate($event)"
+    (deactivate)="onDeactivate($event)"
+  ></router-outlet>
+</div>

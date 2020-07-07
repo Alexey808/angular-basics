@@ -41,6 +41,8 @@ import { AppNgForTrackByFnModule } from './+dev/ng-for-track-by-fn/ng-for-track-
 import { AppInfinityScrollModule } from './+dev/infinity-scroll/infinity-scroll.module';
 import { AppMiniProjectModule } from './+trash/mini-project/components/mini-project.module';
 import { MouseCoordsModule } from './+dev/directives/mouse-coords/mouse-coords.module';
+import { AppGridModule } from './+dev/style/grid/grid.module';
+import { AppTestModule } from './+trash/test/test.module';
 
 
 
@@ -89,6 +91,8 @@ import { MouseCoordsModule } from './+dev/directives/mouse-coords/mouse-coords.m
     AppInfinityScrollModule,
     AppMiniProjectModule,
     MouseCoordsModule,
+    AppGridModule,
+    AppTestModule,
   ],
   // providers: [
   //   { provide: LOCALE_ID, useValue: 'ru-RU' }

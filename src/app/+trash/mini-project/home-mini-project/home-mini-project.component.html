@@ -1,19 +1,19 @@
 <h1>home-mini-project</h1>
 
-<a routerLink="/mini-project">mini-project</a>
-<br>
+
+<div fxLayout="row" fxLayoutGap="3px">
+  <a routerLink="/">root</a>/&nbsp;
+  <a routerLink="/mini-project">mini-project</a>
+  <div>/&nbsp;home</div>
+</div>
 <br>
 
 <div>
-  <div *ngFor="let item of items$ | async">
+  <div *ngFor="let item of items">
     {{item.name}}
   </div>
 </div>
 
-<br>
-<div class="quicksand-light-frac zero">0</div>
-<p>тест</p>
-<p>test</p>
 <br>
 <button (click)="testClick()">testClick</button>
 

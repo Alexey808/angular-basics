@@ -11,6 +11,7 @@ import { TestResolver } from './+mydev/resolvers/test-resolver.resolver';
 import { TestForChildComponent } from './+mydev/test-route/test-for-child/test-for-child.component';
 import { AppMiniProjectModule } from './+trash/mini-project/components/mini-project.module';
 import { AppHomeMiniProjectModule } from './+trash/mini-project/home-mini-project/home-mini-project.module';
+import { TestRouteProgramNavigationComponent } from './+mydev/test-route/test-route-program-navigation/test-route-program-navigation.component';
 
 
 const routes: Routes = [
@@ -20,6 +21,8 @@ const routes: Routes = [
     {path: 'page2-child', component: TestRoutePage2ChildComponent}
   ]},
   {path: 'page2/:id', component: RoutItemComponent},
+  {path: 'prog-nav', component: TestRouteProgramNavigationComponent},
+  {path: 'one-level/two-level/three-level', component: TestRoutePageComponent},
   {path: 'error', component: TestErrorPageComponent},
   {
     path: 'mini-project',

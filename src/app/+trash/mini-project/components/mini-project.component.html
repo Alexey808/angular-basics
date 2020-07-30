@@ -2,13 +2,12 @@
 
   <ng-container *ngIf="!isHome">
     <h1>mini-project</h1>
-    <br>
-    <div fxLayout="row" fxLayoutGap="3px">
-      <a routerLink="/mini-project/home">home</a>
-      <div>/</div>
-      <a routerLink="/">root</a>
-    </div>
 
+    <div fxLayout="row" fxLayoutGap="3px">
+      <a routerLink="/">root</a>
+      <div>/ mini-project /</div>
+      <a routerLink="/mini-project/home">home</a>
+    </div>
   </ng-container>
 
   <router-outlet

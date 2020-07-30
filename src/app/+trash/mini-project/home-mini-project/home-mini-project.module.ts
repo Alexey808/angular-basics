@@ -2,10 +2,16 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HomeMiniProjectComponent } from './home-mini-project.component';
 import { RouterModule, Routes } from '@angular/router';
+import { FlexModule } from '@angular/flex-layout';
+import { DataLoaderResolvers } from '../resolvers/data-loader.resolvers';
 
 const route: Routes = [
   {
-    path: '', component: HomeMiniProjectComponent
+    path: '',
+    component: HomeMiniProjectComponent,
+    resolve: {
+      items: DataLoaderResolvers
+    }
   }
 ];
 
@@ -13,10 +19,11 @@ const route: Routes = [
   declarations: [
     HomeMiniProjectComponent,
   ],
-  imports: [
-    CommonModule,
-    RouterModule.forChild(route),
-  ],
+    imports: [
+        CommonModule,
+        RouterModule.forChild(route),
+        FlexModule,
+    ],
   exports: [
     HomeMiniProjectComponent,
   ]

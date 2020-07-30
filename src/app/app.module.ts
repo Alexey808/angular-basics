@@ -43,6 +43,7 @@ import { AppMiniProjectModule } from './+trash/mini-project/components/mini-proj
 import { MouseCoordsModule } from './+dev/directives/mouse-coords/mouse-coords.module';
 import { AppGridModule } from './+dev/style/grid/grid.module';
 import { AppTestModule } from './+trash/test/test.module';
+import { TestRouteProgramNavigationComponent } from './+mydev/test-route/test-route-program-navigation/test-route-program-navigation.component';
 
 
 
@@ -65,6 +66,7 @@ import { AppTestModule } from './+trash/test/test.module';
         TestErrorPageComponent,
         UnitTestComponent,
         TestStylesComponent,
+        TestRouteProgramNavigationComponent,
         // TestGuardComponent,
     ],
   imports: [

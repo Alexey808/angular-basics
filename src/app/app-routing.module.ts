@@ -37,6 +37,11 @@ const routes: Routes = [
     }
   },
   {path: 'test-for-child', component: TestForChildComponent},
+  {
+    path: 'fun1',
+    loadChildren: () => import('./+trash/fun1/fun-one.module')
+      .then(m => m.FunOneModule),
+  }
 
   // todo остаётся проблема forRoot не знает о модульном дочернем роуте mini-project/home
   // {path: '**', redirectTo: '/error'}

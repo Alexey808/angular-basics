@@ -19,11 +19,11 @@ const route: Routes = [
   declarations: [
     HomeMiniProjectComponent,
   ],
-    imports: [
-        CommonModule,
-        RouterModule.forChild(route),
-        FlexModule,
-    ],
+  imports: [
+      CommonModule,
+      RouterModule.forChild(route),
+      FlexModule,
+  ],
   exports: [
     HomeMiniProjectComponent,
   ]

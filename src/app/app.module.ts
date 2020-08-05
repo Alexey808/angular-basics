@@ -44,6 +44,9 @@ import { MouseCoordsModule } from './+dev/directives/mouse-coords/mouse-coords.m
 import { AppGridModule } from './+dev/style/grid/grid.module';
 import { AppTestModule } from './+trash/test/test.module';
 import { TestRouteProgramNavigationComponent } from './+mydev/test-route/test-route-program-navigation/test-route-program-navigation.component';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { FunOneInterceptorService } from './+trash/fun1/fun-one-interceptor.service';
+import { FunOneModule } from './+trash/fun1/fun-one.module';
 
 
 
@@ -99,6 +102,15 @@ import { TestRouteProgramNavigationComponent } from './+mydev/test-route/test-ro
   // providers: [
   //   { provide: LOCALE_ID, useValue: 'ru-RU' }
   // ],
+
+  // для +trash/fun1
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: FunOneInterceptorService,
+      multi: true,
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -29,7 +29,6 @@ import { TestResolverModule } from './+mydev/resolvers/test-resolver.module';
 import { UnitTestComponent } from './+mydev/testing/unit-test/unit-test.component';
 import { TestRxjsModule } from './+mydev/test-rxjs/test-rxjs.module';
 import { TestStylesComponent } from './+mydev/test-styles/test-styles.component';
-import { TestForChildModule } from './+mydev/test-route/test-for-child/test-for-child.module';
 
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { AppPipesModule } from './pipes/app-pipes.module';
@@ -46,8 +45,7 @@ import { AppTestModule } from './+trash/test/test.module';
 import { TestRouteProgramNavigationComponent } from './+mydev/test-route/test-route-program-navigation/test-route-program-navigation.component';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FunOneInterceptorService } from './+trash/fun1/fun-one-interceptor.service';
-import { FunOneModule } from './+trash/fun1/fun-one.module';
-
+import { FunTwoInterceptorService } from './+trash/fun2/fun-two-interseptor.service';
 
 
 @NgModule({
@@ -103,14 +101,23 @@ import { FunOneModule } from './+trash/fun1/fun-one.module';
   //   { provide: LOCALE_ID, useValue: 'ru-RU' }
   // ],
 
-  // для +trash/fun1
+
   providers: [
+    // для +trash/fun1
+    // {
+    //   provide: HTTP_INTERCEPTORS,
+    //   useClass: FunOneInterceptorService,
+    //   multi: true,
+    // },
+    // для +trash/fun2
     {
       provide: HTTP_INTERCEPTORS,
-      useClass: FunOneInterceptorService,
+      useClass: FunTwoInterceptorService,
       multi: true,
     }
   ],
+
+
   bootstrap: [AppComponent]
 })
 export class AppModule { }

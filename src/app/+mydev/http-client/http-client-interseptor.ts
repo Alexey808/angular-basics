@@ -7,7 +7,7 @@ import {tap} from 'rxjs/operators';
  */
 export class HttpClientInterceptor implements HttpInterceptor {
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    console.log('Interceptor request', req);
+    // console.log('Interceptor request', req);
     const cloned = req.clone({
       headers: req.headers.append('test-auth', 'TOKEN!!!')
     });

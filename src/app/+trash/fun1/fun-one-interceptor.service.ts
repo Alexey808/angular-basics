@@ -13,14 +13,15 @@ export class FunOneInterceptorService implements HttpInterceptor {
   };
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    console.log('start interceptor');
-    if (req.method === 'GET') {
+    if (req.method === 'GET' && req.url === 'fun1') {
       return of(
         new HttpResponse({ status: 200, body: this.fakeData })
       );
-    } else {
-      next.handle(req);
     }
+    // из за fun-two-interceptor закомитил ниже
+    // else {
+    //   next.handle(req);
+    // }
   }
 
 }

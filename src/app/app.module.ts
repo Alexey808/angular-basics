@@ -46,6 +46,7 @@ import { TestRouteProgramNavigationComponent } from './+mydev/test-route/test-ro
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FunOneInterceptorService } from './+trash/fun1/fun-one-interceptor.service';
 import { FunTwoInterceptorService } from './+trash/fun2/fun-two-interseptor.service';
+import { TestingMarbleModule } from './+dev/testing-marble/testing-marble.module';
 
 
 @NgModule({
@@ -96,6 +97,7 @@ import { FunTwoInterceptorService } from './+trash/fun2/fun-two-interseptor.serv
     MouseCoordsModule,
     AppGridModule,
     AppTestModule,
+    TestingMarbleModule,
   ],
   // providers: [
   //   { provide: LOCALE_ID, useValue: 'ru-RU' }

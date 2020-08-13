@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { MiniProjectService } from './mini-project.service';
+import { TestingMarbleService } from './testing-marble.service';
 
-describe('MiniProjectService', () => {
-  let service: MiniProjectService;
+describe('TestingMarbleService', () => {
+  let service: TestingMarbleService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(MiniProjectService);
+    service = TestBed.inject(TestingMarbleService);
   });
 
   it('should be created', () => {

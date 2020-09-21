@@ -47,6 +47,7 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FunOneInterceptorService } from './+trash/fun1/fun-one-interceptor.service';
 import { FunTwoInterceptorService } from './+trash/fun2/fun-two-interseptor.service';
 import { TestingMarbleModule } from './+dev/testing-marble/testing-marble.module';
+import { LibTestingMarbleModule } from './+lib/marble/testing-marble/testing-marble.module';
 
 
 @NgModule({
@@ -98,6 +99,7 @@ import { TestingMarbleModule } from './+dev/testing-marble/testing-marble.module
     AppGridModule,
     AppTestModule,
     TestingMarbleModule,
+    LibTestingMarbleModule,
   ],
   // providers: [
   //   { provide: LOCALE_ID, useValue: 'ru-RU' }

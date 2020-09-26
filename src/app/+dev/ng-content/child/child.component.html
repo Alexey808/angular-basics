@@ -1,0 +1,25 @@
+<h2>child works!</h2>
+
+<!-- 1 -->
+
+<div class="default-container">
+  <ng-content select=".cards-container"></ng-content>
+</div>
+
+
+<!-- 2 -->
+
+
+<div [ngStyle]="{border: '1px solid green', marginBottom: '5px'}">
+  <ng-content select="[data-body1]"></ng-content>
+  <ng-content select=".body2"></ng-content>
+  <ng-content select="body3"></ng-content>
+</div>
+
+
+<!-- -->
+
+
+
+
+

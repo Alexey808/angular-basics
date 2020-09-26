@@ -1,0 +1,44 @@
+<h1>ng-content works!</h1>
+
+<app-child>
+
+  <!-- 1 -->
+
+  <div class="cards-container">
+    <div *ngFor="let item of items" #itemRef class="base-item-{{item.id}}}">
+      <h3>{{item.title}}</h3>
+      <div>{{item.text}}</div>
+    </div>
+  </div>
+
+
+  <!-- 2 -->
+
+
+  <div data-body1>1) через атрибут</div>
+
+  <div class="body2">2) через селектор</div>
+
+  <ng-container ngProjectAs="body3" [ngTemplateOutlet]="body3"></ng-container>
+  <ng-template #body3>
+    <span>3) через ng-container как ngProjectAs</span>
+  </ng-template>
+
+
+  <!-- -->
+
+
+</app-child>
+
+
+
+
+<!--medium.com/ignite-ui/using-ng-content-ngprojectas-1664d7c1d3b-->
+
+
+
+
+
+
+
+

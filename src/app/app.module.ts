@@ -49,6 +49,7 @@ import { FunTwoInterceptorService } from './+trash/fun2/fun-two-interseptor.serv
 import { TestingMarbleModule } from './+dev/testing-marble/testing-marble.module';
 import { LibTestingMarbleModule } from './+lib/marble/testing-marble/testing-marble.module';
 import { TestSharedModule } from './shared/services/test-shared/test-shared.module';
+import { NgContentModule } from './+dev/ng-content/ng-content.module';
 
 
 @NgModule({
@@ -102,6 +103,7 @@ import { TestSharedModule } from './shared/services/test-shared/test-shared.modu
     TestingMarbleModule,
     LibTestingMarbleModule,
     TestSharedModule,
+    NgContentModule,
   ],
   // providers: [
   //   { provide: LOCALE_ID, useValue: 'ru-RU' }

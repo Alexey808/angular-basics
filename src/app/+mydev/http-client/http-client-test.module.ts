@@ -24,6 +24,6 @@ const INTERCEPTOR_PROVIDER: Provider = {
   exports: [
     HttpClientTestComponent
   ],
-  providers: [INTERCEPTOR_PROVIDER]
+  // providers: [INTERCEPTOR_PROVIDER]
 })
 export class HttpClientTestModule { }

@@ -46,6 +46,11 @@ const routes: Routes = [
     path: 'fun2',
     loadChildren: () => import('./+trash/fun2/fun-two.module')
       .then(m => m.FunTwoModule),
+  },
+  {
+    path: 'fun3',
+    loadChildren: () => import('./+trash/fun3/fun3.module')
+      .then(m => m.Fun3Module),
   }
 
   // todo остаётся проблема forRoot не знает о модульном дочернем роуте mini-project/home

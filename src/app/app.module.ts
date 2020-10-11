@@ -50,6 +50,8 @@ import { TestingMarbleModule } from './+dev/testing-marble/testing-marble.module
 import { LibTestingMarbleModule } from './+lib/marble/testing-marble/testing-marble.module';
 import { TestSharedModule } from './shared/services/test-shared/test-shared.module';
 import { NgContentModule } from './+dev/ng-content/ng-content.module';
+import { Fun3InterceptorService } from './+trash/fun3/fun3-interceptor.service';
+import { Fun3Module } from './+trash/fun3/fun3.module';
 
 
 @NgModule({
@@ -117,10 +119,18 @@ import { NgContentModule } from './+dev/ng-content/ng-content.module';
     //   useClass: FunOneInterceptorService,
     //   multi: true,
     // },
+
     // для +trash/fun2
+    // {
+    //   provide: HTTP_INTERCEPTORS,
+    //   useClass: FunTwoInterceptorService,
+    //   multi: true,
+    // }
+
+    // для +tresh/fun3
     {
       provide: HTTP_INTERCEPTORS,
-      useClass: FunTwoInterceptorService,
+      useClass: Fun3InterceptorService,
       multi: true,
     }
   ],

@@ -1,0 +1,9 @@
+.fun-four {
+  cursor: pointer;
+  &:hover {
+    text-shadow: 0 0 2px #868686;
+  }
+  &::selection {
+    background: transparent;
+  }
+}

@@ -52,6 +52,7 @@ import { TestSharedModule } from './shared/services/test-shared/test-shared.modu
 import { NgContentModule } from './+dev/ng-content/ng-content.module';
 import { Fun3InterceptorService } from './+trash/fun3/fun3-interceptor.service';
 import { Fun3Module } from './+trash/fun3/fun3.module';
+import { Fun4InterceptorService } from './+trash/fun4/fun4-interceptor.service';
 
 
 @NgModule({
@@ -128,9 +129,15 @@ import { Fun3Module } from './+trash/fun3/fun3.module';
     // }
 
     // для +tresh/fun3
+    // {
+    //   provide: HTTP_INTERCEPTORS,
+    //   useClass: Fun3InterceptorService,
+    //   multi: true,
+    // }
+
     {
       provide: HTTP_INTERCEPTORS,
-      useClass: Fun3InterceptorService,
+      useClass: Fun4InterceptorService,
       multi: true,
     }
   ],

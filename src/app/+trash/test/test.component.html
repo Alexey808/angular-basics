@@ -1,2 +1,23 @@
-<h1>test frame</h1>
-<iframe allow="storage-access" src="http://192.168.0.10:4201/"></iframe>
+<!--<h1>test frame</h1>-->
+<!--<iframe allow="storage-access" src="http://192.168.0.10:4201/"></iframe>-->
+<pre>{{items | json}}</pre>
+<div class="container">
+  <div class="rotate-wrapper">
+    <div class="block" *ngFor="let item of items"
+         [style.width]="item * 1 + '00' + 'px'"
+         [style.height]="item * 1  + '00' + 'px'"
+    ></div>
+  </div>
+
+
+<!--  <div class="block"></div>-->
+<!--  <div class="block"></div>-->
+<!--  <div class="block"></div>-->
+<!--  <div class="block"></div>-->
+<!--  <div class="block"></div>-->
+<!--  <div class="block"></div>-->
+<!--  <div class="block"></div>-->
+<!--  <div class="block"></div>-->
+<!--  <div class="block"></div>-->
+<!--  <div class="block"></div>-->
+</div>

@@ -9,7 +9,13 @@ export class TestComponent implements OnInit {
 
   constructor() { }
 
+  public amount = 13;
+  public items = [];
+
   ngOnInit(): void {
+    for (let i = 1; i <= this.amount ; i++) {
+      this.items.push(i);
+    }
   }
 
 }

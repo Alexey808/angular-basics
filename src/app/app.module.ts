@@ -53,6 +53,7 @@ import { NgContentModule } from './+dev/ng-content/ng-content.module';
 import { Fun3InterceptorService } from './+trash/fun3/fun3-interceptor.service';
 import { Fun3Module } from './+trash/fun3/fun3.module';
 import { Fun4InterceptorService } from './+trash/fun4/fun4-interceptor.service';
+import { InterceptorsModule } from './core/interceptors.module';
 
 
 @NgModule({
@@ -81,6 +82,7 @@ import { Fun4InterceptorService } from './+trash/fun4/fun4-interceptor.service';
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
+    InterceptorsModule,
     MycardModule,
     MycardEditModule,
     ReactiveFormsModule,
@@ -114,32 +116,7 @@ import { Fun4InterceptorService } from './+trash/fun4/fun4-interceptor.service';
 
 
   providers: [
-    // для +trash/fun1
-    // {
-    //   provide: HTTP_INTERCEPTORS,
-    //   useClass: FunOneInterceptorService,
-    //   multi: true,
-    // },
-
-    // для +trash/fun2
-    // {
-    //   provide: HTTP_INTERCEPTORS,
-    //   useClass: FunTwoInterceptorService,
-    //   multi: true,
-    // }
-
-    // для +tresh/fun3
-    // {
-    //   provide: HTTP_INTERCEPTORS,
-    //   useClass: Fun3InterceptorService,
-    //   multi: true,
-    // }
-
-    {
-      provide: HTTP_INTERCEPTORS,
-      useClass: Fun4InterceptorService,
-      multi: true,
-    }
+    // интерсепторы смотреть в core/interceptors.module.ts
   ],
 
 

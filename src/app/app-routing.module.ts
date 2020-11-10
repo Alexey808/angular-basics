@@ -12,6 +12,7 @@ import { TestForChildComponent } from './+mydev/test-route/test-for-child/test-f
 import { AppMiniProjectModule } from './+trash/mini-project/components/mini-project.module';
 import { AppHomeMiniProjectModule } from './+trash/mini-project/home-mini-project/home-mini-project.module';
 import { TestRouteProgramNavigationComponent } from './+mydev/test-route/test-route-program-navigation/test-route-program-navigation.component';
+import { FunFiveResolverService } from './+trash/fun5/fun-five-resolver.service';
 
 
 const routes: Routes = [
@@ -56,6 +57,14 @@ const routes: Routes = [
     path: 'fun4',
     loadChildren: () => import('./+trash/fun4/fun4.module')
       .then(m => m.Fun4Module),
+  },
+  {
+    path: 'fun5',
+    loadChildren: () => import('./+trash/fun5/fun-five.module')
+      .then(m => m.FunFiveModule),
+    resolve: {
+      items: FunFiveResolverService,
+    }
   }
 
   // todo остаётся проблема forRoot не знает о модульном дочернем роуте mini-project/home

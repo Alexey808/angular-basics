@@ -1,30 +1,30 @@
 import { Injectable } from '@angular/core';
+import { DefaultDataService, IRes } from '../../core/default-data.service';
 import { HttpEvent, HttpHandler, HttpInterceptor, HttpRequest, HttpResponse } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
-import { DefaultDataService, IRes } from '../../core/default-data.service';
 
 @Injectable({
   providedIn: 'root'
 })
-export class Fun4InterceptorService implements HttpInterceptor {
-
-  fakeData: IRes;
+export class FunFiveInterceptorService implements HttpInterceptor {
+  faceData: IRes;
 
   constructor(
     private defaultDataService: DefaultDataService,
   ) {
-    this.fakeData = this.defaultDataService.defaultResData();
+    this.faceData = this.defaultDataService.defaultResData();
   }
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    if (req.method === 'GET' && req.url === 'fun3-data') {
+    if (req.method === 'GET' && req.url === 'fun-five') {
       return of(
-        new HttpResponse({status: 200, body: this.fakeData})
+        new HttpResponse({
+          status: 200,
+          body: this.faceData
+        })
       );
     } else {
       return next.handle(req);
     }
   }
-
-
 }

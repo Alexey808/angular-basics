@@ -1,20 +1,20 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { IItem } from '../../../core/default-data.service';
-import { Fun4ApiService } from '../fun4-api.service';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 
 @Component({
-  selector: 'app-fun-four',
-  templateUrl: './fun-four.component.html',
-  styleUrls: ['./fun-four.component.scss']
+  selector: 'app-fun-five',
+  templateUrl: './fun-five.component.html',
+  styleUrls: ['./fun-five.component.scss']
 })
-export class FunFourComponent implements OnInit, OnDestroy {
+export class FunFiveComponent implements OnInit, OnDestroy {
   items: IItem[] = [];
   subs$ = new Subject<void>();
 
   constructor(
-    private apiService: Fun4ApiService,
+    private route: ActivatedRoute,
   ) { }
 
   ngOnInit(): void {
@@ -27,10 +27,12 @@ export class FunFourComponent implements OnInit, OnDestroy {
   }
 
   private loadData() {
-    this.apiService.getData().pipe(
-      takeUntil(this.subs$)
-    ).subscribe((data: IItem[]) => {
-      this.items = data;
+    this.route.data.pipe(
+      takeUntil(this.subs$),
+    ).subscribe((data) => {
+      console.log(data);
+      debugger
+        // this.items = data;
     });
   }
 }

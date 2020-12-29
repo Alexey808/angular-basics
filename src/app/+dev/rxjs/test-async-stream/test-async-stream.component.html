@@ -1,0 +1,13 @@
+<h1>test-async-stream works!</h1>
+
+<pre>{{allowLoadItems | json}} | {{itemId | json}}</pre>
+
+<div class="container">
+  <div>
+    <pre *ngFor="let item of items1">{{item | json}}</pre>
+  </div>
+
+  <div>
+    <pre *ngFor="let item of items2">{{item | json}}</pre>
+  </div>
+</div>

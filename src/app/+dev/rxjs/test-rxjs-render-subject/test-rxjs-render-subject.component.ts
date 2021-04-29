@@ -19,7 +19,7 @@ export class TestRxjsRenderSubjectComponent implements OnInit, OnDestroy {
     });
 
     for (const item of this.inputValues) {
-      this.items$.next(item);
+      //this.items$.next(item); // todo мешало
     }
   }
 

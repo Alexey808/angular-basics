@@ -55,6 +55,7 @@ import { Fun3Module } from './+trash/fun3/fun3.module';
 import { Fun4InterceptorService } from './+trash/fun4/fun4-interceptor.service';
 import { InterceptorsModule } from './core/interceptors.module';
 import { AppRxjsModule } from './+dev/rxjs/app-rxjs.module';
+import { TestDirectiveModule } from './directives/test-directive.module';
 
 
 @NgModule({
@@ -111,6 +112,7 @@ import { AppRxjsModule } from './+dev/rxjs/app-rxjs.module';
         TestSharedModule,
         NgContentModule,
         AppRxjsModule,
+        TestDirectiveModule,
     ],
   // providers: [
   //   { provide: LOCALE_ID, useValue: 'ru-RU' }

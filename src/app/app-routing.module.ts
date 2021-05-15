@@ -67,6 +67,11 @@ const routes: Routes = [
     resolve: {
       items: FunFiveResolverService,
     }
+  },
+
+  {
+    path: 'di-token',
+    loadChildren: () => import('./di-token/test-di-token.module').then(m => m.TestDiTokenModule),
   }
 
   // todo остаётся проблема forRoot не знает о модульном дочернем роуте mini-project/home

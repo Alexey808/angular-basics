@@ -56,6 +56,7 @@ import { Fun4InterceptorService } from './+trash/fun4/fun4-interceptor.service';
 import { InterceptorsModule } from './core/interceptors.module';
 import { AppRxjsModule } from './+dev/rxjs/app-rxjs.module';
 import { TestDirectiveModule } from './directives/test-directive.module';
+import { MyLinksComponent } from './my-links/my-links.component';
 
 
 @NgModule({
@@ -78,6 +79,7 @@ import { TestDirectiveModule } from './directives/test-directive.module';
         UnitTestComponent,
         TestStylesComponent,
         TestRouteProgramNavigationComponent,
+        MyLinksComponent,
         // TestGuardComponent,
     ],
     imports: [

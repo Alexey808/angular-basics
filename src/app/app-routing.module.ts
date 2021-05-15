@@ -13,10 +13,12 @@ import { AppMiniProjectModule } from './+trash/mini-project/components/mini-proj
 import { AppHomeMiniProjectModule } from './+trash/mini-project/home-mini-project/home-mini-project.module';
 import { TestRouteProgramNavigationComponent } from './+mydev/test-route/test-route-program-navigation/test-route-program-navigation.component';
 import { FunFiveResolverService } from './+trash/fun5/fun-five-resolver.service';
+import { MyLinksComponent } from './my-links/my-links.component';
 
 
 const routes: Routes = [
-  {path: '', component: TestRoutePageComponent},
+  {path: '', component: MyLinksComponent},
+  {path: 'page0', component: TestRoutePageComponent},
   {path: 'page1', component: TestRoutePage1Component},
   {path: 'page2', component: TestRoutePage2Component, children: [
     {path: 'page2-child', component: TestRoutePage2ChildComponent}

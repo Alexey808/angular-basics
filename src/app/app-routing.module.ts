@@ -69,9 +69,14 @@ const routes: Routes = [
     }
   },
 
+  // ссылки в my-links
   {
     path: 'di-token',
     loadChildren: () => import('./di-token/test-di-token.module').then(m => m.TestDiTokenModule),
+  },
+  {
+    path: 'test-rxjs-service',
+    loadChildren: () => import('./services/test-rxjs-service/test-rxjs-service.module').then(m => m.TestRxjsServiceModule),
   }
 
   // todo остаётся проблема forRoot не знает о модульном дочернем роуте mini-project/home

@@ -1,0 +1,6 @@
+<ng-container *ngFor="let item of (data$ | async)">
+  <pre (click)="updateItem(item.id)">{{item | json}}</pre>
+</ng-container>
+
+
+

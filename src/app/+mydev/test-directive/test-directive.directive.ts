@@ -25,4 +25,8 @@ export class TestDirectiveDirective {
     // this.renderer.setStyle(this.elRef.nativeElement, 'color', null); // 1 вариант
     this.elColor = null; // 2 вариант
   }
+
+  @HostListener('document:keydown.enter', ['$event.target']) enter(event: Event) {
+    console.log('ENTER -> ', event);
+  }
 }

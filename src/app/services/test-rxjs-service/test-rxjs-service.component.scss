@@ -1,0 +1,13 @@
+:host {
+  display: inline-grid;
+}
+.wrapper {
+  margin: 3px;
+  padding: 3px;
+  background-color: #f3f3f3;
+}
+
+.container {
+  display: inline-flex;
+  flex-direction: column;
+}

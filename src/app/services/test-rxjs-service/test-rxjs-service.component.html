@@ -1,6 +1,17 @@
-<ng-container *ngFor="let item of (data$ | async)">
-  <pre (click)="updateItem(item.id)">{{item | json}}</pre>
-</ng-container>
+<button (click)="onCreate()">create</button>
+
+<div class="container">
+  <div class="wrapper" *ngFor="let item of (data$ | async)">
+    <pre>{{item | json}}</pre>
+    <div class="buttons">
+      <button (click)="onDelete(item.id)">delete</button>
+      <button (click)="onUpdate(item)">update</button>
+    </div>
+  </div>
+</div>
+
+
+
 
 
 

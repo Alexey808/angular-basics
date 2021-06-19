@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { TestRxjsServiceService } from './test-rxjs-service.service';
+import { Item, ItemId, TestRxjsServiceService } from './test-rxjs-service.service';
 import { Observable } from 'rxjs';
 
 @Component({
@@ -20,8 +20,17 @@ export class TestRxjsServiceComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  updateItem(id: number) {
-    console.log('updateItem');
-    this.service.updateItem(id);
+  onCreate() {
+    const newItem = {id: 4, value: 'test-4'};
+    this.service.onCreate(newItem);
+  }
+
+  onDelete(id: ItemId) {
+    this.service.onDelete(id);
+  }
+
+  onUpdate(item) {
+    const updatedItem = {...item, value: `test_${item.value}`};
+    this.service.onUpdate(updatedItem);
   }
 }

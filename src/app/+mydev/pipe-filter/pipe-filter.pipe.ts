@@ -1,5 +1,6 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { Item } from '../../app.component'; // { title: string }
+
+interface Item { title: string; }
 
 @Pipe({
   name: 'pipeFilter',

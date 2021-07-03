@@ -31,7 +31,7 @@ import { TestRxjsModule } from './+mydev/test-rxjs/test-rxjs.module';
 import { TestStylesComponent } from './+mydev/test-styles/test-styles.component';
 
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { AppPipesModule } from './pipes/app-pipes.module';
+import { AppPipesModule } from './dev/pipes/app-pipes.module';
 import { AppAdaptiveLayoutModule } from './+dev/adaptive-layout/app-adaptive-layout.module';
 import { AppNgAnimateModule } from './+lib/ng-animate/app-ng-animate.module';
 import { AppAnimateModule } from './+dev/animate/app-animate.module';
@@ -43,20 +43,13 @@ import { MouseCoordsModule } from './+dev/directives/mouse-coords/mouse-coords.m
 import { AppGridModule } from './+dev/style/grid/grid.module';
 import { AppTestModule } from './+trash/test/test.module';
 import { TestRouteProgramNavigationComponent } from './+mydev/test-route/test-route-program-navigation/test-route-program-navigation.component';
-import { HTTP_INTERCEPTORS } from '@angular/common/http';
-import { FunOneInterceptorService } from './+trash/fun1/fun-one-interceptor.service';
-import { FunTwoInterceptorService } from './+trash/fun2/fun-two-interseptor.service';
 import { TestingMarbleModule } from './+dev/testing-marble/testing-marble.module';
 import { LibTestingMarbleModule } from './+lib/marble/testing-marble/testing-marble.module';
 import { TestSharedModule } from './shared/services/test-shared/test-shared.module';
 import { NgContentModule } from './+dev/ng-content/ng-content.module';
-import { Fun3InterceptorService } from './+trash/fun3/fun3-interceptor.service';
-import { Fun3Module } from './+trash/fun3/fun3.module';
-import { Fun4InterceptorService } from './+trash/fun4/fun4-interceptor.service';
 import { InterceptorsModule } from './core/interceptors.module';
 import { AppRxjsModule } from './+dev/rxjs/app-rxjs.module';
 import { TestDirectiveModule } from './directives/test-directive.module';
-import { MyLinksComponent } from './my-links/my-links.component';
 
 
 @NgModule({
@@ -79,8 +72,6 @@ import { MyLinksComponent } from './my-links/my-links.component';
         UnitTestComponent,
         TestStylesComponent,
         TestRouteProgramNavigationComponent,
-        MyLinksComponent,
-        // TestGuardComponent,
     ],
     imports: [
         BrowserModule,

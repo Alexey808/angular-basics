@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, merge, Observable, of, zip } from 'rxjs';
-import { flatMap, map, mergeMap, tap } from 'rxjs/operators';
+import { BehaviorSubject, concat, forkJoin, from, merge, Observable, of, zip } from 'rxjs';
+import { delay, flatMap, map, mergeMap, reduce, tap } from 'rxjs/operators';
 
 export interface Item {
   id: number;
@@ -34,35 +34,6 @@ export class TestRxjsServiceService {
     return of(INIT_DATA);
   }
 
-  fakeApiUpdateItem(item: Item) {
-    console.log('api - update item', item);
-    // return of(INIT_DATA.map((x) => x.id === item.id ? item : x));
-
-    // return zip(this.data, of([item])).pipe(
-    //   tap((x) => console.log('zip -> ', x)),
-    //   map((x, b) => {
-    //     console.log(x, b);
-    //     return x;
-    //   })
-    // ).subscribe();
-
-    return merge(this.data).pipe(
-      map((items) => items.map((x) => x.id === item.id ? item : x) ),
-    ).subscribe((data) => {
-      this.data.next(data);
-    });
-  }
-
-  fakeApiDeleteItem(id: ItemId): Observable<Item[]> {
-    console.log('api - delete item - id: ', id);
-    return of(INIT_DATA);
-  }
-
-  fakeApiCreateItem(item): Observable<Item[]> {
-    console.log('api - create item - item: ', item);
-    return of([...INIT_DATA, item]);
-  }
-
   /**
    * Local service
    */
@@ -80,14 +51,36 @@ export class TestRxjsServiceService {
 
 
   public onCreate(item: Item): void {
-    this.fakeApiCreateItem(item);
+    // this.fakeApiCreateItem(item);
+    forkJoin([this.dataSubject, of(item)]).pipe(
+      map(([items, newItem]) => [...items, newItem]),
+    ).subscribe((items) => {
+      console.log('items -> ', items);
+    });
+
+
   }
 
-  public onUpdate(item: Item): void {
-    this.fakeApiUpdateItem(item);
+  public onUpdate(item: Item) {
+    // console.log('api - update item', item);
+    // // return of(INIT_DATA.map((x) => x.id === item.id ? item : x));
+    //
+    // // return zip(this.data, of([item])).pipe(
+    // //   tap((x) => console.log('zip -> ', x)),
+    // //   map((x, b) => {
+    // //     console.log(x, b);
+    // //     return x;
+    // //   })
+    // // ).subscribe();
+    //
+    // return merge(this.data).pipe(
+    //   map((items) => items.map((x) => x.id === item.id ? item : x) ),
+    // ).subscribe((data) => {
+    //   this.data.next(data);
+    // });
   }
 
   public onDelete(id: ItemId): void {
-    this.fakeApiDeleteItem(id);
+    // this.fakeApiDeleteItem(id);
   }
 }

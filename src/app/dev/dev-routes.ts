@@ -12,5 +12,9 @@ export const DevRoutes: Routes = [
   {
     path: 'pipes-my-currency',
     loadChildren: () => import('./pipes/app-pipes.module').then(m => m.AppPipesModule),
+  },
+  {
+    path: 'ng-content',
+    loadChildren: () => import('./ng-content/selector/selector.module').then(m => m.SelectorModule),
   }
 ];

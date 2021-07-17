@@ -16,5 +16,9 @@ export const DevRoutes: Routes = [
   {
     path: 'ng-content',
     loadChildren: () => import('./ng-content/selector/selector.module').then(m => m.SelectorModule),
+  },
+  {
+    path: 'rxjs',
+    loadChildren: () => import('./rxjs/rxjs-test.module').then(m => m.RxjsTestModule),
   }
 ];

@@ -1,0 +1,27 @@
+<h1>form-example works!</h1>
+<br>
+
+<div [formGroup]="formGroup" class="form">
+  <div>
+    <input [formControlName]="todoFields.title">
+    <span *ngIf="formGroup.get(todoFields.title).invalid">
+      Поле обязательно для заполениня
+    </span>
+  </div>
+  <div>
+    <input type="date" [formControlName]="todoFields.date">
+  </div>
+  <div>
+    <input type="checkbox" [formControlName]="todoFields.done">
+  </div>
+
+  <div>
+    <button (click)="isShowFormValues = !isShowFormValues" [disabled]="isEmptyFormFields">show result</button>
+  </div>
+</div>
+
+<br>
+<div *ngIf="isShowFormValues">
+  <pre>{{formGroup.getRawValue() | json}}</pre>
+</div>
+

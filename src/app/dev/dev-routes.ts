@@ -24,5 +24,9 @@ export const DevRoutes: Routes = [
   {
     path: 'abstract-class',
     loadChildren: () => import('./classes/abstract-class-example/abstract-class-example.module').then(m => m.AbstractClassExampleModule),
+  },
+  {
+    path: 'form-example',
+    loadChildren: () => import('./forms/form-example/form-example.module').then(m => m.FormExampleModule),
   }
 ];

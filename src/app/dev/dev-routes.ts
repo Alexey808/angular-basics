@@ -20,5 +20,9 @@ export const DevRoutes: Routes = [
   {
     path: 'rxjs',
     loadChildren: () => import('./rxjs/rxjs-test.module').then(m => m.RxjsTestModule),
+  },
+  {
+    path: 'abstract-class',
+    loadChildren: () => import('./classes/abstract-class-example/abstract-class-example.module').then(m => m.AbstractClassExampleModule),
   }
 ];

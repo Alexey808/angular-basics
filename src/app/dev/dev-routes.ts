@@ -28,5 +28,9 @@ export const DevRoutes: Routes = [
   {
     path: 'form-example',
     loadChildren: () => import('./forms/form-example/form-example.module').then(m => m.FormExampleModule),
+  },
+  {
+    path: 'rest-api',
+    loadChildren: () => import('./rest-api/rest-api.module').then(m => m.RestApiModule),
   }
 ];

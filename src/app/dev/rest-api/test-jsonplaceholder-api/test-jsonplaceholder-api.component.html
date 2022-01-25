@@ -1,0 +1,7 @@
+<h1>test-jsonplaceholder-api works!</h1>
+<br>
+<button (click)="load()">load</button>
+<br>
+<pre *ngFor="let item of (data$ | async)">
+  {{ item | json }}
+</pre>

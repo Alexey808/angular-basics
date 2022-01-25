@@ -3,16 +3,17 @@ import { CommonModule } from '@angular/common';
 import { TestDiTokenModule } from './di-token/test-di-token.module';
 import { AppPipesModule } from './pipes/app-pipes.module';
 import { TestRxjsServiceModule } from './services/test-rxjs-service/test-rxjs-service.module';
-import { CustomPipeValueFilter } from './rxjs/custom-pipe-operators/values-filter';
+import { RestApiModule } from './rest-api/rest-api.module';
 
 
 @NgModule({
-  declarations: [CustomPipeValueFilter],
+  declarations: [],
   imports: [
     CommonModule,
     TestDiTokenModule,
     AppPipesModule,
     TestRxjsServiceModule,
+    RestApiModule,
   ],
   exports: []
 })

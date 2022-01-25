@@ -50,6 +50,7 @@ import { NgContentModule } from './+dev/ng-content/ng-content.module';
 import { InterceptorsModule } from './core/interceptors.module';
 import { AppRxjsModule } from './+dev/rxjs/app-rxjs.module';
 import { TestDirectiveModule } from './directives/test-directive.module';
+import { DevModule } from './dev/dev.module';
 
 
 @NgModule({
@@ -106,6 +107,7 @@ import { TestDirectiveModule } from './directives/test-directive.module';
         NgContentModule,
         AppRxjsModule,
         TestDirectiveModule,
+        DevModule,
     ],
   // providers: [
   //   { provide: LOCALE_ID, useValue: 'ru-RU' }

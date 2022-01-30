@@ -32,12 +32,12 @@ describe('TestingMarbleComponent', () => {
   // });
 
   // 4
-  it('should create', () => {
-    service.getDataSimple().subscribe((result) => {
-      console.log('result ---> ', result);
-      expect(result.length).toBeGreaterThan(0);
-    });
-  });
+  // it('should create', () => {
+  //   service.getDataSimple().subscribe((result) => {
+  //     console.log('result ---> ', result);
+  //     expect(result.length).toBeGreaterThan(0);
+  //   });
+  // });
 
 });
 

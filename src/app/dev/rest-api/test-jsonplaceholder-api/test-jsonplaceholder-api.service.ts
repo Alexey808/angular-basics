@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
+import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
-import { map, tap } from 'rxjs/operators';
+import { delay } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +13,9 @@ export class TestJsonplaceholderApiService {
   ) { }
 
   getItem(num: number): Observable<any> {
-    return this.httpClient.get(`https://jsonplaceholder.typicode.com/todos/${1}`);
+    return this.httpClient.get(`https://jsonplaceholder.typicode.com/todos/${1}`).pipe(
+      delay(5000),
+    );
   }
 
   getData(): Observable<any> {

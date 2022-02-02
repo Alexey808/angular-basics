@@ -36,5 +36,9 @@ export const DevRoutes: Routes = [
   {
     path: 'tests',
     loadChildren: () => import('./tests/tests.module').then(m => m.TestsModule),
+  },
+  {
+    path: 'trackby',
+    loadChildren: () => import('./track-by/track-by.module').then(m => m.TrackByModule),
   }
 ];

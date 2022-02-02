@@ -48,5 +48,10 @@ export const DevRoutes: Routes = [
   {
     path: 'resolver-example',
     loadChildren: () => import('./resolver-example/resolver-example.module').then(m => m.ResolverExampleModule),
+  },
+  {
+    path: 'control-value-accessor-example',
+    loadChildren: () => import('./forms/control-value-accessor-example/control-value-accessor-example.module')
+      .then(m => m.ControlValueAccessorExampleModule),
   }
 ];

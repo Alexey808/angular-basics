@@ -15,3 +15,12 @@ html, body {
 .nav-active {
   color: green;
 }
+
+.container-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.container-row {
+  display: flex;
+}

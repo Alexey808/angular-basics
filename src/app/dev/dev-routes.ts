@@ -44,5 +44,9 @@ export const DevRoutes: Routes = [
   {
     path: 'guard-example',
     loadChildren: () => import('./guard-example/guard-example.module').then(m => m.GuardExampleModule),
+  },
+  {
+    path: 'resolver-example',
+    loadChildren: () => import('./resolver-example/resolver-example.module').then(m => m.ResolverExampleModule),
   }
 ];

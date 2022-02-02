@@ -40,5 +40,9 @@ export const DevRoutes: Routes = [
   {
     path: 'trackby',
     loadChildren: () => import('./track-by/track-by.module').then(m => m.TrackByModule),
+  },
+  {
+    path: 'guard-example',
+    loadChildren: () => import('./guard-example/guard-example.module').then(m => m.GuardExampleModule),
   }
 ];

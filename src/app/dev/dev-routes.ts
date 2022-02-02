@@ -32,5 +32,9 @@ export const DevRoutes: Routes = [
   {
     path: 'rest-api',
     loadChildren: () => import('./rest-api/rest-api.module').then(m => m.RestApiModule),
+  },
+  {
+    path: 'tests',
+    loadChildren: () => import('./tests/tests.module').then(m => m.TestsModule),
   }
 ];

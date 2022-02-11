@@ -7,7 +7,8 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "start-sw": "http-server -p 8080 -c-1 dist/angular-basics"
   },
   "private": true,
   "dependencies": {
@@ -21,6 +22,7 @@
     "@angular/platform-browser": "~9.0.1",
     "@angular/platform-browser-dynamic": "~9.0.1",
     "@angular/router": "~9.0.1",
+    "@types/sharedworker": "0.0.64",
     "jasmine-marbles": "^0.6.0",
     "ng-animate": "^0.3.4",
     "rxjs": "~6.5.4",

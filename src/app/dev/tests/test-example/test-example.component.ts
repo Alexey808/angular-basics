@@ -1,7 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { IItem, TestExampleService } from './test-example.service';
 import { takeUntil } from 'rxjs/operators';
-import { Subject } from 'rxjs';
+import { Observable, of, Subject } from 'rxjs';
 
 @Component({
   selector: 'app-test-example',
@@ -11,6 +11,17 @@ import { Subject } from 'rxjs';
 export class TestExampleComponent implements OnInit, OnDestroy {
   data: IItem[] = [];
   destroy$: Subject<void> = new Subject<void>();
+
+
+  myPrivatValue: string | null = null;
+  myPublicValue: string | null = null;
+
+  isTemplate = false;
+  isTemplate$ = of(false);
+
+  get observable$(): Observable<boolean> {
+    return of(false);
+  }
 
   constructor(
     private service: TestExampleService,
@@ -33,7 +44,9 @@ export class TestExampleComponent implements OnInit, OnDestroy {
     });
   }
 
-  public method1(): void {}
-  private method2(): void {}
-
+  /**/
+  public publicVoidMethod(): void {}
+  private privateVoidMethod(): void {}
+  public publicReturnMethod(): boolean { return true; }
+  public publicVoidMethodWithArgument(arg: boolean): void {}
 }

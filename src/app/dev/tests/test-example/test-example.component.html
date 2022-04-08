@@ -5,3 +5,27 @@
 <div class="container">
   <div class="item" *ngFor="let item of data">{{ item.value }}</div>
 </div>
+
+
+<!-- 080422 -->
+<hr>
+
+<button (click)="isTemplate = !isTemplate">change isTemplate</button>
+<div class="container2">
+  <ng-container *ngIf="isTemplate; else block2Ref">
+    template is true
+  </ng-container>
+  <ng-template #block2Ref>
+    <div>template is false</div>
+  </ng-template>
+</div>
+
+<hr>
+<div class="container3">
+  <ng-container *ngIf="(isTemplate$ | async) as isTemplateAsync; else block3Ref">
+    template is true
+  </ng-container>
+  <ng-template #block3Ref>
+    <div>template is false</div>
+  </ng-template>
+</div>

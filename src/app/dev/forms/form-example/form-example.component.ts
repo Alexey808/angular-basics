@@ -13,9 +13,19 @@ export class FormExampleComponent extends FormExample implements OnInit {
     super();
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    console.log('formGroup1 -> ', this.formGroup1);
+  }
 
   showLog() {
     console.log(this.formGroup.getRawValue());
+  }
+
+  getSimpleFormArray() {
+    console.log(this.simpleFormArray.getRawValue());
+  }
+
+  getExpandedFormArray() {
+    console.log(this.expandedFormArray.getRawValue());
   }
 }

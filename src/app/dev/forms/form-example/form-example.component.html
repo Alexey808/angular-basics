@@ -25,3 +25,26 @@
   <pre>{{formGroup.getRawValue() | json}}</pre>
 </div>
 
+
+<hr>
+
+<h3>simpleFormArray</h3>
+<ng-container *ngFor="let control of simpleFormArray.controls; index as i">
+  <input type="text" [formControl]="simpleFormArray.controls[i]" />
+</ng-container>
+<button (click)="getSimpleFormArray()">getRaw</button>
+<br><br>
+
+<h3>expandedFormArray</h3>
+<form [formGroup]="expandedFormArray">
+  <ng-container formArrayName="myFromArray"
+                *ngFor="let control of getFormGroup1Array; index as i">
+    <ng-container [formGroupName]="i">
+      <input formControlName="myValue"/>
+    </ng-container>
+  </ng-container>
+  <button (click)="getExpandedFormArray()">getRaw</button>
+</form>
+
+<br><br>
+

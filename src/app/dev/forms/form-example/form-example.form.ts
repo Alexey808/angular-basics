@@ -1,4 +1,4 @@
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
 
 export interface ITodo {
   id?: string;
@@ -20,6 +20,28 @@ export class FormExample {
     [TodoFields.date]: new FormControl(null, []),
     [TodoFields.done]: new FormControl(null, []),
   }, []);
+
+
+  /** expandedFormArray */
+  public expandedFormArray: FormGroup = new FormGroup({
+    myFromArray: new FormArray([
+      new FormGroup({ myValue: new FormControl('myValue1') }),
+      new FormGroup({ myValue: new FormControl('myValue2') }),
+      new FormGroup({ myValue: new FormControl('myValue3') }),
+    ])
+  });
+  get getFormGroup1Array(): FormArray[] {
+    return this.expandedFormArray.get('myFromArray')['controls'] as FormArray[];
+  }
+  /** *** */
+
+  /** simpleFormArray */
+  public simpleFormArray: FormArray = new FormArray([
+    new FormControl('test1'),
+    new FormControl('test2'),
+    new FormControl('test3'),
+  ]);
+  /** *** */
 
   public get isEmptyFormFields(): boolean {
     const { title, date, done } = this.formGroup.getRawValue();

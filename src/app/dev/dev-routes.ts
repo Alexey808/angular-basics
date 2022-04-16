@@ -1,4 +1,5 @@
 import { Routes } from '@angular/router';
+import { ControlValueAccessorExample1Module } from './forms/control-value-accessor-example1/control-value-accessor-example1.module';
 
 export const DevRoutes: Routes = [
   {
@@ -53,6 +54,11 @@ export const DevRoutes: Routes = [
     path: 'control-value-accessor-example',
     loadChildren: () => import('./forms/control-value-accessor-example/control-value-accessor-example.module')
       .then(m => m.ControlValueAccessorExampleModule),
+  },
+  {
+    path: 'control-value-accessor-example1',
+    loadChildren: () => import('./forms/control-value-accessor-example1/control-value-accessor-example1.module')
+      .then(m => m.ControlValueAccessorExample1Module),
   },
   {
     path: 'workers',

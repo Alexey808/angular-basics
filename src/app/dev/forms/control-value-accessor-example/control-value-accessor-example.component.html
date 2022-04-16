@@ -1,9 +1,10 @@
 <h1>control-value-accessor-example works!</h1>
 <br>
-<form [formGroup]="form">
-  <div class="container-col">
-    <input type="text" formControlName="testStr"/>
-    <button (click)="updateValue(value)">button</button>
-  </div>
-</form>
+<!--<form [formGroup]="form">-->
+<!--  <app-cva-input-field formControlName="inputValue"></app-cva-input-field>-->
+<!--  <button (click)="checkValue()">button</button>-->
+<!--</form>-->
+
+<!--<app-cva-input-field></app-cva-input-field>-->
+<app-cva-input-field (change)="changedValue($event)"></app-cva-input-field>
 

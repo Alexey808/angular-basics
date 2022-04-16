@@ -9,13 +9,12 @@ import { FormExample, TodoFields } from './form-example.form';
 export class FormExampleComponent extends FormExample implements OnInit {
   public todoFields: typeof TodoFields = TodoFields;
   public isShowFormValues: boolean = false;
+
   constructor() {
     super();
   }
 
-  ngOnInit(): void {
-    console.log('formGroup1 -> ', this.formGroup1);
-  }
+  ngOnInit(): void {}
 
   showLog() {
     console.log(this.formGroup.getRawValue());

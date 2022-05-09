@@ -67,5 +67,9 @@ export const DevRoutes: Routes = [
   {
     path: 'counter-test-directive',
     loadChildren: () => import('./directives/counter/counter.module').then(m => m.CounterModule),
+  },
+  {
+    path: 'ng-template-one-example',
+    loadChildren: () => import('./ng-template/ng-template-one-example/ng-template-one-example.module').then(m => m.NgTemplateOneExampleModule),
   }
 ];

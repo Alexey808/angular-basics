@@ -1,0 +1,18 @@
+<ng-container #vc></ng-container>
+<ng-template #tpl>
+  <div>Этот контент вставится в #vc</div>
+</ng-template>
+
+<ng-template [ngIf]="permission$ | async">
+  <div>Проверяет роль по токену. ngIf template</div>
+</ng-template>
+
+<ng-container *ngIf="permission$ | async">
+  <div>Проверяет роль по токену. ngIf container</div>
+</ng-container>
+
+<ng-template appCheckRole>
+  <div>Проверяет роль по токену. Дирректива appCheckRole, если true то вставляет в родительский элемент</div>
+</ng-template>
+
+

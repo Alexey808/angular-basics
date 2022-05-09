@@ -1,0 +1,15 @@
+<div appCounter [volume]="items.length">
+  <div *ngFor="let item of items"
+       appIndexCounter
+       (index)="sp['index'] = $event">
+    <span #sp [attr.data-id]="'test-' + sp['index']">{{item}}-{{sp['index']}}</span>
+  </div>
+</div>
+
+<!--<div appCounter [volume]="itemsTwo.length">-->
+<!--  <div *ngFor="let item of itemsTwo"-->
+<!--       appIndexCounter-->
+<!--       (index)="i = $event">-->
+<!--    <span>{{item}}</span> {{i}}-->
+<!--  </div>-->
+<!--</div>-->

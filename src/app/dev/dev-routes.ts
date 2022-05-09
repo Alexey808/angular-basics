@@ -63,5 +63,9 @@ export const DevRoutes: Routes = [
   {
     path: 'workers',
     loadChildren: () => import('./worker-examples/worker-examples.module').then(m => m.WorkerExamplesModule),
+  },
+  {
+    path: 'counter-test-directive',
+    loadChildren: () => import('./directives/counter/counter.module').then(m => m.CounterModule),
   }
 ];
